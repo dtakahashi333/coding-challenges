@@ -1,0 +1,121 @@
+# ================================
+# OS-SPECIFIC FILES
+# ================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+
+# ================================
+# PYTHON
+# ================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+pip-wheel-metadata/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# MyPy and Pyre type checker
+.mypy_cache/
+.pyre/
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# PEP 582 – Python local packages
+__pypackages__/
+
+# ================================
+# IntelliJ IDEA / PyCharm (JetBrains)
+# ================================
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# ================================
+# Visual Studio Code
+# ================================
+.vscode/
+.history/
+
+# ================================
+# SWIFT / XCODE
+# ================================
+# Swift Package Manager
+.build/
+Packages/
+.swiftpm/xcode/package.xcworkspace/
+
+# Xcode
+DerivedData/
+*.xcworkspace
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcshareddata/WorkspaceSettings.xcsettings
+xcuserdata/
+*.xcuserstate
+*.moved-aside
+*.xcuserdatad
+
+# Carthage
+Carthage/Build/
+
+# CocoaPods
+Pods/
+*.xcconfig
+
+# Archives and logs
+*.xcarchive
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.log
+
+# SwiftPM binary artifacts
+artifacts/
+
+# ================================
+# ENVIRONMENT / TOOLING
+# ================================
+*.log
+*.bak
+*.tmp
+*.swp
+*.swo
+*.orig
+
+# ================================
+# NODE / FRONTEND (optional)
+# ================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ================================
+# ENV FILES (Secrets / Configs)
+# ================================
+.env
+.env.*
