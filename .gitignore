@@ -96,6 +96,39 @@ Pods/
 artifacts/
 
 # ================================
+# KOTLIN (Gradle + Kotlin DSL)
+# ================================
+# Gradle build output
+.gradle/
+build/
+
+# Local configuration
+local.properties
+
+# IDE output
+out/
+
+# Kotlin compiled classes
+*.class
+*.jar
+*.war
+*.ear
+
+# Project-specific cache
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/gradle.xml
+.idea/compiler.xml
+
+# Logs
+*.log
+
+# Optional: ignore generated files (keep if generated)
+generated/
+
+# ================================
 # ENVIRONMENT / TOOLING
 # ================================
 *.log
