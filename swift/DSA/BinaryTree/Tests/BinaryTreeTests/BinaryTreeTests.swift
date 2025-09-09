@@ -1,9 +1,17 @@
+//
+//  BinaryTreeTests.swift
+//  BinaryTree
+//
+//  Created by Daisuke Takahashi on 9/8/25.
+//
+
 import Testing
+
 @testable import BinaryTree
 
 @Test func testBuildBinaryTree1() async throws {
     let tree = buildBinaryTree(items: [1, nil, 2, 3])
-    
+
     // Assertions using #expect
     #expect(tree != nil)
     #expect(tree!.val == 1)

@@ -1,3 +1,10 @@
+//
+//  BinaryTree.swift
+//  BinaryTree
+//
+//  Created by Daisuke Takahashi on 9/8/25.
+//
+
 class TreeNode {
     var val: Int
     var left: TreeNode?
@@ -9,7 +16,7 @@ class TreeNode {
 }
 
 func buildBinaryTree(items: [Int?]?) -> TreeNode? {
-    guard let list = items else {
+    guard let list = items, !list.isEmpty else {
         return nil
     }
 

@@ -1,5 +1,5 @@
 //
-//  InorderTraversal.swift
+//  PreorderTraversal.swift
 //  BinaryTree
 //
 //  Created by Daisuke Takahashi on 9/8/25.
@@ -7,30 +7,27 @@
 
 import BinaryTree
 
-class InorderTraversal {
-
+class PreorderTraversal {
+    
     public init() {}
-
-    public func inorderTraversal(_ root: TreeNode?) -> [Int] {
+    
+    public func preorderTraversal(_ root: TreeNode?) -> [Int] {
         var current: TreeNode? = root
         var stack: [TreeNode] = []
         var result: [Int] = []
-
+        
         while current != nil || !stack.isEmpty {
-            // Reach the leftmost node of the current node
-            while let node = current {  // This is the same as if current != nill {
+            while let node = current {
+                result.append(node.val)
                 stack.append(node)
                 current = node.left
             }
 
-            // Current is now nil, pop from stack
+            // current = nil
             let node = stack.removeLast()
-            result.append(node.val)
-
-            // Visit the right subtree
             current = node.right
         }
-
+        
         return result
     }
 }
