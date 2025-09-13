@@ -5,8 +5,6 @@
 //  Created by Daisuke Takahashi on 9/8/25.
 //
 
-import BinaryTree
-
 class InorderTraversal {
 
     public init() {}
