@@ -235,3 +235,134 @@ You now have:
 ---
 
 Would you like a shell script that generates this structure automatically?
+
+
+You're seeing this Git error because you're trying to run `git pull`, but Git doesn't know **how you want to reconcile** changes between your local branch and the remote — **merge, rebase, or fast-forward**.
+
+This happens **only when your local and remote branches have diverged** (i.e., both have new commits that the other doesn't).
+
+---
+
+## 💥 Error Summary:
+
+```
+You have divergent branches and need to specify how to reconcile them.
+```
+
+This is **not an error in your code**, but Git asking:
+
+> "When pulling, should I merge, rebase, or only fast-forward?"
+
+---
+
+## ✅ The Quick Fix (Choose One Strategy)
+
+Pick the pull strategy you prefer and configure Git **once**, either globally or per-repo.
+
+### ✅ Option 1: Merge (default and safe)
+
+```bash
+git config pull.rebase false
+```
+
+Or globally:
+
+```bash
+git config --global pull.rebase false
+```
+
+🔁 This means: "When pulling, merge remote changes into mine."
+
+---
+
+### ✅ Option 2: Rebase (cleaner history)
+
+```bash
+git config pull.rebase true
+```
+
+Or globally:
+
+```bash
+git config --global pull.rebase true
+```
+
+🔀 This means: "Replay my changes on top of the latest remote branch."
+
+---
+
+### ✅ Option 3: Fast-forward only (no merge commits allowed)
+
+```bash
+git config pull.ff only
+```
+
+Or globally:
+
+```bash
+git config --global pull.ff only
+```
+
+🚫 This will **fail** if your local branch and remote have diverged.
+
+---
+
+## 🧪 Example Use Case
+
+Let’s say you want to merge by default:
+
+```bash
+git config --global pull.rebase false
+```
+
+Then you can just run:
+
+```bash
+git pull
+```
+
+And Git will perform a **merge** automatically when needed.
+
+---
+
+## 📍 One-Time Fix (No config change)
+
+You can also resolve the issue just once by adding a flag to `git pull`:
+
+* Merge:
+
+  ```bash
+  git pull --no-rebase
+  ```
+
+* Rebase:
+
+  ```bash
+  git pull --rebase
+  ```
+
+* Fast-forward only:
+
+  ```bash
+  git pull --ff-only
+  ```
+
+---
+
+## 🔍 Recommendation for Most Developers
+
+If you're unsure, use this:
+
+```bash
+git config --global pull.rebase false
+```
+
+Because:
+
+* It's the default in many setups
+* Easier to understand
+* Less risk of conflicts
+
+---
+
+Let me know which strategy you'd like to use, and I can help you set it up for your workflow or team.
