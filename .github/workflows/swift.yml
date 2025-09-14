@@ -21,8 +21,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: swift build -v
-      working-directory: swift/DSA/BinaryTree
+      run: swift build -v --package-path swift/DSA/BinaryTree
     - name: Run tests
-      run: swift test -v
-      working-directory: swift/DSA/BinaryTree
+      run: swift test -v --package-path swift/DSA/BinaryTree
