@@ -9,9 +9,9 @@ class RightView {
 
     public init() {}
 
-    /// <#Description#>
-    /// - Parameter root: <#root description#>
-    /// - Returns: <#description#>
+    /// Returns a list of nodes that are visible when the binary tree is viewed from the right.
+    /// - Parameter root: The root of a binary tree
+    /// - Returns: A list of nodes that are visible when the binary tree is viewed from the right.
     public func rightView(_ root: TreeNode?) -> [Int] {
         guard let root else {
             return []
