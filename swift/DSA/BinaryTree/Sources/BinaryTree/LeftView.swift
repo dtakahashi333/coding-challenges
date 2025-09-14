@@ -9,9 +9,9 @@ class LeftView {
 
     public init() {}
 
-    /// <#Description#>
-    /// - Parameter root: <#root description#>
-    /// - Returns: <#description#>
+    /// Returns a list of nodes that are visible when the binary tree is viewed from the left.
+    /// - Parameter root: The root of a binary tree
+    /// - Returns: A list of nodes that are visible when the binary tree is viewed from the left.
     public func leftView(_ root: TreeNode?) -> [Int] {
         guard let root else {
             return []
