@@ -1,0 +1,25 @@
+# Dart tool and build artifacts
+.dart_tool/
+.packages
+build/
+.pub-cache/
+.pub/
+
+# Dependency lock file (optional – keep if you're publishing a package)
+pubspec.lock
+
+# IDE and editor settings
+.idea/
+.vscode/
+*.iml
+
+# Logs and crash reports
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+*.swp
+*.lock
