@@ -23,7 +23,7 @@ class Solution {
       current = stack.removeLast();
 
       current = current.right;
-   }
+    }
 
     return result;
   }

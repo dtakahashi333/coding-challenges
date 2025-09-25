@@ -23,7 +23,7 @@ class Solution {
       result.add(current.val);
 
       current = current.right;
-   }
+    }
 
     return result;
   }
