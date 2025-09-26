@@ -4,7 +4,7 @@
 # https://leetcode.com/problems/binary-tree-preorder-traversal/description/
 
 from typing import List, Optional
-from binary_tree import TreeNode
+from dsa.binary_tree.binary_tree import TreeNode
 
 
 class Solution:
