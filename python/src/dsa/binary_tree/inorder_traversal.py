@@ -18,16 +18,25 @@ class Solution:
         stack = []
 
         while current is not None or len(stack) > 0:
-            if current is not None:
-                if current.left is not None:
-                    stack.append(current)
-                    current = current.left
-                else:
-                    result.append(current.val)
-                    current = current.right
-            elif len(stack) > 0:
-                current = stack.pop()
-                result.append(current.val)
-                current = current.right
+            # if current is not None:
+            #     if current.left is not None:
+            #         stack.append(current)
+            #         current = current.left
+            #     else:
+            #         result.append(current.val)
+            #         current = current.right
+            # elif len(stack) > 0:
+            #     current = stack.pop()
+            #     result.append(current.val)
+            #     current = current.right
+            while current is not None:
+                stack.append(current)
+                current = current.left
+
+            # current is None.
+            current = stack.pop()
+            result.append(current.val)
+
+            current = current.right
 
         return result
