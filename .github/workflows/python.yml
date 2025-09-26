@@ -30,7 +30,7 @@ jobs:
     - name: Set up Miniforge (Conda)
       uses: conda-incubator/setup-miniconda@v3
       with:
-        miniforge-variant: Mambaforge  # or Miniforge3 if you prefer
+        miniforge-variant: Miniforge3
         use-mamba: true
         python-version: ${{ matrix.python-version }}   # override Python version
         environment-file: python/environment.yml
