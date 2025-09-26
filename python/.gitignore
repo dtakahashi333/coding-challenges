@@ -1,0 +1,72 @@
+# ===================================
+# Byte-compiled / Interpreter Files
+# ===================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ===================================
+# Distribution / Packaging
+# ===================================
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# ===================================
+# Virtual Environments
+# ===================================
+venv/
+.venv/
+env/
+ENV/
+
+# ===================================
+# Jupyter Notebooks
+# ===================================
+.ipynb_checkpoints/
+
+# ===================================
+# Static Type Checkers
+# ===================================
+.mypy_cache/
+.pyre/
+
+# ===================================
+# Testing
+# ===================================
+.pytest_cache/
+.cache/
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# ===================================
+# Python Local Packages (PEP 582)
+# ===================================
+__pypackages__/
+
+# ===================================
+# Editors / IDEs (local, optional)
+# ===================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ===================================
+# Miscellaneous
+# ===================================
+*.log
+*.tmp
+*.bak
+*.old
+*.swp
+*.swo
+*.orig

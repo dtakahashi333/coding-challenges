@@ -1,154 +1,77 @@
-# ================================
+# ===================================
 # OS-SPECIFIC FILES
-# ================================
+# ===================================
 .DS_Store
 Thumbs.db
 ehthumbs.db
 Icon?
 desktop.ini
 
-# ================================
-# PYTHON
-# ================================
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.so
-*.egg
-*.egg-info/
-dist/
-build/
-*.manifest
-*.spec
+# macOS specific
+.AppleDouble
+.LSOverride
 
-# Virtual environments
-venv/
-env/
-ENV/
-.venv/
-pip-wheel-metadata/
+# Windows specific
+$RECYCLE.BIN/
+*.lnk
 
-# Jupyter Notebook Checkpoints
-.ipynb_checkpoints/
+# Linux/Unix
+.Trash-*/
 
-# MyPy and Pyre type checker
-.mypy_cache/
-.pyre/
+# ===================================
+# IDE / EDITOR SETTINGS
+# ===================================
 
-# Pytest
-.cache/
-.pytest_cache/
+# VSCode
+.vscode/
+.history/
 
-# PEP 582 – Python local packages
-__pypackages__/
-
-# ================================
-# IntelliJ IDEA / PyCharm (JetBrains)
-# ================================
+# JetBrains IDEs (IntelliJ, PyCharm, WebStorm, etc.)
 .idea/
 *.iml
 *.iws
 *.ipr
 out/
 
-# ================================
-# Visual Studio Code
-# ================================
-.vscode/
-.history/
+# Sublime
+*.sublime-workspace
+*.sublime-project
 
-# ================================
-# SWIFT / XCODE
-# ================================
-# Swift Package Manager
-.build/
-Packages/
-.swiftpm/xcode/package.xcworkspace/
+# Eclipse
+.project
+.classpath
+.csettings
+.settings/
 
-# Xcode
-DerivedData/
-*.xcworkspace
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-!*.xcodeproj/xcshareddata/WorkspaceSettings.xcsettings
-xcuserdata/
-*.xcuserstate
-*.moved-aside
-*.xcuserdatad
-
-# Carthage
-Carthage/Build/
-
-# CocoaPods
-Pods/
-*.xcconfig
-
-# Archives and logs
-*.xcarchive
-*.ipa
-*.dSYM.zip
-*.dSYM
-*.log
-
-# SwiftPM binary artifacts
-artifacts/
-
-# ================================
-# KOTLIN (Gradle + Kotlin DSL)
-# ================================
-# Gradle build output
-.gradle/
-build/
-
-# Local configuration
-local.properties
-
-# IDE output
-out/
-
-# Kotlin compiled classes
-*.class
-*.jar
-*.war
-*.ear
-
-# Project-specific cache
-.idea/caches/
-.idea/libraries/
-.idea/modules.xml
-.idea/workspace.xml
-.idea/gradle.xml
-.idea/compiler.xml
-
-# Logs
-*.log
-
-# Optional: ignore generated files (keep if generated)
-generated/
-
-# ================================
-# ENVIRONMENT / TOOLING
-# ================================
-*.log
-*.bak
-*.tmp
+# Vim
 *.swp
 *.swo
+*.un~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ===================================
+# LOGS, TEMP, BACKUPS
+# ===================================
+*.log
+*.tmp
+*.bak
 *.orig
+*.old
+*.rej
 
-# ================================
-# NODE / FRONTEND (optional)
-# ================================
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# ===================================
+# SYSTEM / TOOLING
+# ===================================
+*.lock
+*.cache
+*.pid
+*.seed
+*.coverage
 
-# ================================
-# ENV FILES (Secrets / Configs)
-# ================================
-.env
-.env.*
+# Patch files
+*.patch
+*.diff

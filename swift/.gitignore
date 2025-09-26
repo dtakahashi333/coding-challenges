@@ -1,0 +1,73 @@
+# ===================================
+# Xcode
+# ===================================
+DerivedData/
+*.xcworkspace
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcshareddata/WorkspaceSettings.xcsettings
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad
+*.moved-aside
+
+# ===================================
+# SwiftPM (Swift Package Manager)
+# ===================================
+.build/
+Packages/
+.swiftpm/xcode/package.xcworkspace/
+artifacts/
+
+# ===================================
+# CocoaPods
+# ===================================
+Pods/
+*.xcconfig
+
+# ===================================
+# Carthage
+# ===================================
+Carthage/Build/
+
+# ===================================
+# Archives and Symbols
+# ===================================
+*.xcarchive
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# ===================================
+# Binary / Output
+# ===================================
+*.app
+*.framework
+*.xib
+*.nib
+*.mode1v3
+*.pbxuser
+*.swp
+
+# ===================================
+# Logs & Temporary
+# ===================================
+*.log
+*.tmp
+*.bak
+
+# ===================================
+# Playground support
+# ===================================
+timeline.xctimeline
+playground.xcworkspace/
+
+# ===================================
+# IDE / Editor Settings
+# ===================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

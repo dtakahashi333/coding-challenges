@@ -1,25 +1,40 @@
-# Dart tool and build artifacts
+# ===================================
+# Dart Tooling
+# ===================================
 .dart_tool/
 .packages
-build/
 .pub-cache/
-.pub/
+build/
+.dart_server/
 
-# Dependency lock file (optional – keep if you're publishing a package)
+# ===================================
+# Flutter
+# ===================================
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-plugins-shared
+.flutter-versions
+.metadata
+
+# iOS/Android artifacts (for Flutter mobile)
+android/.gradle/
+android/captures/
+android/local.properties
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework/
+ios/Flutter/Generated.xcconfig
+
+# Web build
+web/generated_plugin_registrant.dart
+
+# ===================================
+# Dependency folders
+# ===================================
 pubspec.lock
+node_modules/
 
-# IDE and editor settings
-.idea/
-.vscode/
-*.iml
-
-# Logs and crash reports
-*.log
-
-# OS-specific files
-.DS_Store
-Thumbs.db
-
-# Miscellaneous
-*.swp
-*.lock
+# ===================================
+# IDE / Editor Files
