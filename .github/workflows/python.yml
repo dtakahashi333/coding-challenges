@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.12"]
 
     steps:
     - uses: actions/checkout@v4
@@ -28,7 +28,7 @@ jobs:
     - name: Set up Miniforge (Conda)
       uses: conda-incubator/setup-miniconda@v3
       with:
-        distribution: miniforge
+        miniforge-variant: Mambaforge  # or Miniforge3 if you prefer
         use-mamba: true
         python-version: ${{ matrix.python-version }}   # override Python version
         environment-file: python/environment.yml
