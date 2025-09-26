@@ -36,13 +36,19 @@ jobs:
         environment-file: python/environment.yml
         activate-environment: myenv
         auto-update-conda: true
-        
+    
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
         if [ -f python/requirements.txt ]; then pip install -r python/requirements.txt; fi
-        
+    
+    - name: Debug directory
+      run: |
+        pwd
+        ls -l
+        ls -l python
+    
     - name: Lint with flake8
       working-directory: python/test
       run: |
@@ -52,7 +58,7 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 python/src python/test \
           --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-        
+    
     - name: Test with pytest
       working-directory: python
       run: |
