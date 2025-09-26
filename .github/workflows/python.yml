@@ -8,10 +8,12 @@ on:
     branches: [ "main" ]
     paths:
     - python/**
+    - .github/wokflows/python.yml
   pull_request:
     branches: [ "main" ]
     paths:
     - python/**
+    - .github/wokflows/python.yml
 
 jobs:
   build:

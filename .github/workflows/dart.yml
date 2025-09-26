@@ -10,10 +10,12 @@ on:
     branches: [ "main" ]
     paths:
     - dart/**
+    - .github/wokflows/dart.yml
   pull_request:
     branches: [ "main" ]
     paths:
     - dart/**
+    - .github/wokflows/dart.yml
 
 jobs:
   build:

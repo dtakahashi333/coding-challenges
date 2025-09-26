@@ -8,10 +8,12 @@ on:
     branches: [ "main" ]
     paths:
     - 'swift/**'
+    - .github/wokflows/swift.yml
   pull_request:
     branches: [ "main" ]
     paths:
     - 'swift/**'
+    - .github/wokflows/swift.yml
 
 jobs:
   build:
