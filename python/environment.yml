@@ -14,7 +14,6 @@ dependencies:
   - ncurses=6.5
   - openssl=3.5.2
   - pip=25.2
-  - python=3.12.11
   - readline=8.2
   - setuptools=80.9.0
   - tk=8.6.13
