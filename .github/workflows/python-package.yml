@@ -1,0 +1,53 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Miniforge (Conda)
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        distribution: miniforge
+        use-mamba: true
+        python-version: ${{ matrix.python-version }}   # override Python version
+        environment-file: python/environment.yml
+        activate-environment: myenv
+        auto-update-conda: true
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install flake8 pytest
+        if [ -f python/requirements.txt ]; then pip install -r python/requirements.txt; fi
+        
+    - name: Lint with flake8
+      working-directory: python/test
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 python/src python/test \
+          --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 python/src python/test \
+          --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        
+    - name: Test with pytest
+      working-directory: python
+      run: |
+        pytest test
