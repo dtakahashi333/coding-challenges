@@ -12,7 +12,7 @@ class Solution() {
         val stack: MutableList<TreeNode> = mutableListOf<TreeNode>()
 
         while (current != null || stack.count() > 0) {
-            if (current != null) {
+            /*if (current != null) {
                 if (current.left != null) {
                     stack.add(current)
                     current = current.left
@@ -24,8 +24,20 @@ class Solution() {
                 current = stack.removeLast()
                 result.add(current.value)
                 current = current.right
+            }*/
+            
+            while (current != null) {
+                stack.add(current)
+                current = current.left
             }
+
+            // current is null.
+            current = stack.removeLast()
+            result.add(current.value)
+
+            current = current.right
         }
+
         return result
     }
 
