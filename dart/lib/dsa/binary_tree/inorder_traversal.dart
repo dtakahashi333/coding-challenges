@@ -1,6 +1,6 @@
 // lib/dsa/binary_tree/inorder_traversal.dart
 
-import 'package:coding_challenges/dsa/binary_tree/binary_tree.dart';
+import 'package:coding_challenges/dsa/binary_tree/tree_node.dart';
 
 class Solution {
   List<int> inorderTraversal(TreeNode? root) {

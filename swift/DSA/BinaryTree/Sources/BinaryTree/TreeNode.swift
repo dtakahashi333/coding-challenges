@@ -1,6 +1,6 @@
 //
-//  BinaryTree.swift
-//  BinaryTree
+//  TreeNode.swift
+//  TreeNode
 //
 //  Created by Daisuke Takahashi on 9/8/25.
 //

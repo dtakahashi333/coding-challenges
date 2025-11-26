@@ -2,10 +2,10 @@
 
 import 'package:test/test.dart';
 
-import 'package:coding_challenges/dsa/binary_tree/binary_tree.dart';
+import 'package:coding_challenges/dsa/binary_tree/tree_node.dart';
 
 void main() {
-  group('Binary Tree', () {
+  group('Tree Node', () {
     test('build binary tree', () {
       var list = [1, null, 2, 3];
       var tree = buildBinaryTree(list);

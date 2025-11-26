@@ -2,7 +2,7 @@
 
 import 'package:test/test.dart';
 
-import 'package:coding_challenges/dsa/binary_tree/binary_tree.dart';
+import 'package:coding_challenges/dsa/binary_tree/tree_node.dart';
 import 'package:coding_challenges/dsa/binary_tree/preorder_traversal.dart';
 
 void main() {
