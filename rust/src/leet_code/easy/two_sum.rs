@@ -1,4 +1,4 @@
-// rust/src/easy/two_sum.rs
+// rust/src/leet_code/easy/two_sum.rs
 
 use std::collections::HashMap;
 
