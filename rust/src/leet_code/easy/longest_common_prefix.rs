@@ -1,6 +1,7 @@
 // rust/src/leet_code/easy/longest_common_prefix.rs
 
-use std::cmp;
+// 14. Longest Common Prefix
+// https://leetcode.com/problems/longest-common-prefix/
 
 #[derive(Debug)]
 pub struct Solution;
@@ -18,7 +19,7 @@ impl Solution {
             for s in strs.iter().skip(1) {
                 if byte_index >= s.len() {
                     break 'outer;
-                } 
+                }
                 let c2 = s[byte_index..].chars().next().unwrap();
                 if c2 != c1 {
                     break 'outer;

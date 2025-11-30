@@ -1,4 +1,12 @@
-mod two_sum;
-mod palindrome_number;
-mod roman_to_int;
+mod length_of_last_word;
 mod longest_common_prefix;
+mod merge_two_lists;
+mod palindrome_number;
+mod plus_one;
+mod remove_duplicates;
+mod remove_element;
+mod roman_to_int;
+mod search_insert;
+mod str_str;
+mod two_sum;
+mod valid_parentheses;
