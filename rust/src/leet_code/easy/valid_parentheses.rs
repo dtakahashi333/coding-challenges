@@ -7,6 +7,7 @@
 struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn is_valid(&self, s: String) -> bool {
         let mut stack = Vec::new();
         for c in s.chars() {

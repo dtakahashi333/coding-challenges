@@ -7,6 +7,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn roman_to_int(&self, s: String) -> i32 {
         let chars: Vec<char> = s.chars().collect();
         let string_length = chars.len();

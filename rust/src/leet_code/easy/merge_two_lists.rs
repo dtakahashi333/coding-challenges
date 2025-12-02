@@ -9,6 +9,7 @@ use crate::leet_code::common::list_node::ListNode;
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn merge_two_lists(
         &self,
         list1: Option<Box<ListNode>>,
@@ -62,33 +63,9 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::{ListNode, Solution};
-    use std::boxed::Box;
+    use crate::leet_code::common::list_node::{list_to_vec, vec_to_list};
 
-    // Helper: convert Vec<i32> → Option<Box<ListNode>>
-    fn vec_to_list(nums: Vec<i32>) -> Option<Box<ListNode>> {
-        let mut current = None;
-
-        for &num in nums.iter().rev() {
-            let mut node = Box::new(ListNode::new(num));
-            node.next = current;
-            current = Some(node);
-        }
-
-        current
-    }
-
-    // Helper: convert Option<Box<ListNode>> → Vec<i32>
-    fn list_to_vec(mut list: Option<Box<ListNode>>) -> Vec<i32> {
-        let mut result = vec![];
-
-        while let Some(node) = list {
-            result.push(node.val);
-            list = node.next;
-        }
-
-        result
-    }
+    use super::*;
 
     #[test]
     fn test1() {

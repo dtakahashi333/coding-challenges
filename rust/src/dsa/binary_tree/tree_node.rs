@@ -19,6 +19,7 @@ impl TreeNode {
     }
 }
 
+#[allow(dead_code)]
 pub fn build_binary_tree(list: &Vec<Option<i32>>) -> Option<TreeNode> {
     if list.is_empty() || list[0].is_none() {
         return None;
@@ -42,7 +43,7 @@ pub fn build_binary_tree(list: &Vec<Option<i32>>) -> Option<TreeNode> {
                 None => {}
             }
 
-            i = i + 1;
+            i += 1;
 
             if i < list.len() {
                 match list[i] {
@@ -55,7 +56,7 @@ pub fn build_binary_tree(list: &Vec<Option<i32>>) -> Option<TreeNode> {
                     None => {}
                 }
 
-                i = i + 1;
+                i += 1;
             }
         }
     }

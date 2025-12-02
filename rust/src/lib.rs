@@ -1,2 +1,2 @@
-mod dsa;
-mod leet_code;
+pub mod dsa;
+pub mod leet_code;

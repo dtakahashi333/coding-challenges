@@ -7,6 +7,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn length_of_last_word(&self, s: String) -> i32 {
         // let words: Vec<char> = s.chars().collect();
         // let words_len = words.len();

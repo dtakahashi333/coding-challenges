@@ -9,6 +9,7 @@ use std::collections::HashMap;
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn two_sum(&self, nums: Vec<i32>, target: i32) -> Vec<i32> {
         let mut map = HashMap::new();
         let mut result = Vec::new();

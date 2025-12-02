@@ -7,6 +7,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn remove_duplicates(&self, nums: &mut Vec<i32>) -> i32 {
         if nums.is_empty() {
             return 0;

@@ -7,6 +7,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn str_str(&self, haystack: String, needle: String) -> i32 {
         if needle.is_empty() {
             return 0;

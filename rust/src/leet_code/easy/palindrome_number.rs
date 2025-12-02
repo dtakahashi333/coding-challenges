@@ -7,6 +7,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn is_palindrome(&self, x: i32) -> bool {
         let x_as_string = x.to_string();
         let chars: Vec<char> = x_as_string.chars().collect();

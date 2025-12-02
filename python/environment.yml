@@ -1,4 +1,4 @@
-name: coding-callenges
+name: coding-challenges
 channels:
   - conda-forge
 dependencies:

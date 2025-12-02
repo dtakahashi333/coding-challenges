@@ -1,2 +1,2 @@
-mod common;
-mod easy;
+pub mod common;
+pub mod easy;

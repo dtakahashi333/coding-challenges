@@ -7,6 +7,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn longest_common_prefix(&self, strs: Vec<String>) -> String {
         if strs.is_empty() {
             return String::new();
@@ -28,7 +29,7 @@ impl Solution {
             prefix_len = byte_index + c1.len_utf8();
         }
 
-        return (&strs[0])[..prefix_len].to_string();
+        (&strs[0])[..prefix_len].to_string()
     }
 }
 

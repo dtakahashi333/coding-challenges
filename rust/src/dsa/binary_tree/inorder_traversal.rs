@@ -6,6 +6,7 @@ use super::tree_node;
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn inorder_traversal_recursive(&self, root: &Option<&tree_node::TreeNode>) -> Vec<i32> {
         let mut result: Vec<i32> = Vec::new();
         self.inorder_traversal_recursive_helper(root, &mut result);
@@ -27,6 +28,7 @@ impl Solution {
         }
     }
 
+    #[allow(dead_code)]
     pub fn inorder_traversal(&self, root: &Option<&tree_node::TreeNode>) -> Vec<i32> {
         let mut result = Vec::new();
         let mut stack = Vec::new();

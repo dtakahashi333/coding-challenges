@@ -7,6 +7,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn remove_element(&self, nums: &mut Vec<i32>, val: i32) -> i32 {
         let mut k = 0 as usize;
         for i in 0..nums.len() {

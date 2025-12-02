@@ -7,6 +7,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn plus_one(&self, digits: Vec<i32>) -> Vec<i32> {
         let mut digits = digits;
         let mut carry = 1;
