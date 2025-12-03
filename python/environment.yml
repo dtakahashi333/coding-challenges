@@ -1,3 +1,10 @@
+# python/environment.yml
+
+# To create a new environment, use:
+# mamba create -f environment.yml
+# OR
+# conda create -f environment.yml
+
 name: coding-challenges
 channels:
   - conda-forge

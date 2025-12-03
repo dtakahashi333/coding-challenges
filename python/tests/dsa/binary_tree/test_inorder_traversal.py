@@ -1,7 +1,7 @@
 #!/bin/env python3
 
 from unittest import TestCase
-from dsa.binary_tree.binary_tree import build_binary_tree
+from dsa.binary_tree.tree_node import build_binary_tree
 from dsa.binary_tree.inorder_traversal import Solution as S2
 from dsa.binary_tree.inorder_traversal_recursive import Solution as S1
 
