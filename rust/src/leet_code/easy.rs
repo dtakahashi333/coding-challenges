@@ -1,6 +1,8 @@
 pub mod add_binary;
 pub mod climb_stairs;
 pub mod delete_duplicates;
+pub mod inorder_traversal;
+pub mod is_same_tree;
 pub mod length_of_last_word;
 pub mod longest_common_prefix;
 pub mod merge;
