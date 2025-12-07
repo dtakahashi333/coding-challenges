@@ -1,5 +1,8 @@
 // rust/src/leet_code/easy/is_same_tree.rs
 
+// 100. Same Tree
+// https://leetcode.com/problems/same-tree/
+
 use crate::leet_code::common::tree_node::TreeNode;
 
 use std::cell::RefCell;
@@ -27,8 +30,10 @@ impl Solution {
 
         while (node1.is_some() && node2.is_some()) || (!stack1.is_empty() && !stack2.is_empty()) {
             while node1.is_some() && node2.is_some() {
-                let n1 = node1.as_ref().unwrap().clone();
-                let n2 = node2.as_ref().unwrap().clone();
+                // let n1 = node1.as_ref().unwrap().clone();
+                // let n2 = node2.as_ref().unwrap().clone();
+                let n1 = node1.take().unwrap();
+                let n2 = node2.take().unwrap();
                 node1 = n1.borrow().left.clone();
                 node2 = n2.borrow().left.clone();
                 if n1.borrow().val != n2.borrow().val {

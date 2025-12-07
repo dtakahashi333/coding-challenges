@@ -39,9 +39,9 @@ impl Solution {
             return result;
         }
 
-        let mut stack = Vec::new();
         // node: Option<Rc<RefCell<TreeNode>>>
         let mut node = root.as_ref().cloned();
+        let mut stack = Vec::new();
 
         while node.is_some() || !stack.is_empty() {
             while let Some(n) = node {
