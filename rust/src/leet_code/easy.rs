@@ -1,6 +1,9 @@
 pub mod add_binary;
 pub mod climb_stairs;
 pub mod delete_duplicates;
+pub mod generate;
+pub mod get_row;
+pub mod has_path_sum;
 pub mod inorder_traversal;
 pub mod is_balanced;
 pub mod is_same_tree;
@@ -10,6 +13,7 @@ pub mod longest_common_prefix;
 pub mod max_depth;
 pub mod merge;
 pub mod merge_two_lists;
+pub mod min_depth;
 pub mod my_sqrt;
 pub mod palindrome_number;
 pub mod plus_one;

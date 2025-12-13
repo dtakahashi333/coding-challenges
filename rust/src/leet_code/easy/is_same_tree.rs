@@ -58,14 +58,14 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::leet_code::common::tree_node::build_tree2;
+    use crate::leet_code::common::tree_node::vec_to_bst;
 
     use super::*;
 
     #[test]
     fn test1() {
-        let p = build_tree2(vec![Some(1), Some(2), Some(2)]);
-        let q = build_tree2(vec![Some(1), Some(2), Some(2)]);
+        let p = vec_to_bst(vec![Some(1), Some(2), Some(2)]);
+        let q = vec_to_bst(vec![Some(1), Some(2), Some(2)]);
         let s = Solution;
         let result = s.is_same_tree(p, q);
         assert_eq!(result, true);
@@ -73,8 +73,8 @@ mod tests {
 
     #[test]
     fn test2() {
-        let p = build_tree2(vec![Some(1), Some(2)]);
-        let q = build_tree2(vec![Some(1), None, Some(2)]);
+        let p = vec_to_bst(vec![Some(1), Some(2)]);
+        let q = vec_to_bst(vec![Some(1), None, Some(2)]);
         let s = Solution;
         let result = s.is_same_tree(p, q);
         assert_eq!(result, false);
@@ -82,8 +82,8 @@ mod tests {
 
     #[test]
     fn test3() {
-        let p = build_tree2(vec![Some(1), Some(2), Some(1)]);
-        let q = build_tree2(vec![Some(1), Some(1), Some(2)]);
+        let p = vec_to_bst(vec![Some(1), Some(2), Some(1)]);
+        let q = vec_to_bst(vec![Some(1), Some(1), Some(2)]);
         let s = Solution;
         let result = s.is_same_tree(p, q);
         assert_eq!(result, false);
@@ -91,8 +91,8 @@ mod tests {
 
     #[test]
     fn test4() {
-        let p = build_tree2(vec![]);
-        let q = build_tree2(vec![Some(0)]);
+        let p = vec_to_bst(vec![]);
+        let q = vec_to_bst(vec![Some(0)]);
         let s = Solution;
         let result = s.is_same_tree(p, q);
         assert_eq!(result, false);
@@ -100,8 +100,8 @@ mod tests {
 
     #[test]
     fn test5() {
-        let p = build_tree2(vec![Some(1)]);
-        let q = build_tree2(vec![Some(1), None, Some(2)]);
+        let p = vec_to_bst(vec![Some(1)]);
+        let q = vec_to_bst(vec![Some(1), None, Some(2)]);
         let s = Solution;
         let result = s.is_same_tree(p, q);
         assert_eq!(result, false);

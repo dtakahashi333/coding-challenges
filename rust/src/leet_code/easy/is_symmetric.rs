@@ -57,11 +57,11 @@ impl Solution {
 mod tests {
     use super::*;
 
-    use crate::leet_code::common::tree_node::build_tree2;
+    use crate::leet_code::common::tree_node::vec_to_bst;
 
     #[test]
     fn test1() {
-        let root = build_tree2(vec![1, 2, 2, 3, 4, 4, 3].iter().map(|x| Some(*x)).collect());
+        let root = vec_to_bst(vec![1, 2, 2, 3, 4, 4, 3].iter().map(|x| Some(*x)).collect());
         let s = Solution;
         let result = s.is_symmetric(root);
         assert_eq!(result, true);
@@ -69,7 +69,7 @@ mod tests {
 
     #[test]
     fn test2() {
-        let root = build_tree2(vec![
+        let root = vec_to_bst(vec![
             Some(1),
             Some(2),
             Some(2),

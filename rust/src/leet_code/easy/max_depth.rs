@@ -47,11 +47,11 @@ impl Solution {
 mod test {
     use super::*;
 
-    use crate::leet_code::common::tree_node::build_tree2;
+    use crate::leet_code::common::tree_node::vec_to_bst;
 
     #[test]
     fn test1() {
-        let root = build_tree2(vec![
+        let root = vec_to_bst(vec![
             Some(3),
             Some(9),
             Some(20),
@@ -67,7 +67,7 @@ mod test {
 
     #[test]
     fn test2() {
-        let root = build_tree2(vec![Some(1), None, Some(2)]);
+        let root = vec_to_bst(vec![Some(1), None, Some(2)]);
         let s = Solution;
         let result = s.max_depth(root);
         assert_eq!(result, 2);

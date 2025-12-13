@@ -86,14 +86,14 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::leet_code::common::tree_node::build_tree2;
+    use crate::leet_code::common::tree_node::vec_to_bst;
 
     use super::*;
 
     #[test]
     fn test1() {
         let list = vec![Some(1), None, Some(2), Some(3)];
-        let root = build_tree2(list);
+        let root = vec_to_bst(list);
         let s = Solution;
         let result = s.inorder_traversal_recursive(root);
         assert_eq!(result, vec![1, 3, 2]);
@@ -115,7 +115,7 @@ mod tests {
             Some(7),
             Some(9),
         ];
-        let root = build_tree2(list);
+        let root = vec_to_bst(list);
         let s = Solution;
         let result = s.inorder_traversal_recursive(root);
         assert_eq!(result, vec![4, 2, 6, 5, 7, 1, 3, 9, 8]);
@@ -124,7 +124,7 @@ mod tests {
     #[test]
     fn test3() {
         let list = vec![];
-        let root = build_tree2(list);
+        let root = vec_to_bst(list);
         let s = Solution;
         let result = s.inorder_traversal_recursive(root);
         assert_eq!(result, vec![]);
@@ -133,7 +133,7 @@ mod tests {
     #[test]
     fn test4() {
         let list = vec![Some(1)];
-        let root = build_tree2(list);
+        let root = vec_to_bst(list);
         let s = Solution;
         let result = s.inorder_traversal_recursive(root);
         assert_eq!(result, vec![1]);
@@ -142,7 +142,7 @@ mod tests {
     #[test]
     fn test5() {
         let list = vec![Some(1), None, Some(2), Some(3)];
-        let root = build_tree2(list);
+        let root = vec_to_bst(list);
         let s = Solution;
         let result = s.inorder_traversal(root);
         assert_eq!(result, vec![1, 3, 2]);
@@ -164,7 +164,7 @@ mod tests {
             Some(7),
             Some(9),
         ];
-        let root = build_tree2(list);
+        let root = vec_to_bst(list);
         let s = Solution;
         let result = s.inorder_traversal(root);
         assert_eq!(result, vec![4, 2, 6, 5, 7, 1, 3, 9, 8]);
@@ -173,7 +173,7 @@ mod tests {
     #[test]
     fn test7() {
         let list = vec![];
-        let root = build_tree2(list);
+        let root = vec_to_bst(list);
         let s = Solution;
         let result = s.inorder_traversal(root);
         assert_eq!(result, vec![]);
@@ -182,7 +182,7 @@ mod tests {
     #[test]
     fn test8() {
         let list = vec![Some(1)];
-        let root = build_tree2(list);
+        let root = vec_to_bst(list);
         let s = Solution;
         let result = s.inorder_traversal(root);
         assert_eq!(result, vec![1]);

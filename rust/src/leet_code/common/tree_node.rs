@@ -23,6 +23,7 @@ impl TreeNode {
     }
 }
 
+#[deprecated]
 pub fn build_tree(values: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
     if values.is_empty() || values[0].is_none() {
         return None;
@@ -56,6 +57,7 @@ pub fn build_tree(values: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
     Some(root)
 }
 
+#[deprecated]
 pub fn build_tree2(values: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
     if values.is_empty() || values[0].is_none() {
         return None;
@@ -88,6 +90,7 @@ pub fn build_tree2(values: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
     Some(root)
 }
 
+#[allow(deprecated)]
 pub fn vec_to_bst(values: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
     build_tree2(values)
 }
