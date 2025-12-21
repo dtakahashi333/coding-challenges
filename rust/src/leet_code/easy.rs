@@ -19,6 +19,7 @@ pub mod min_depth;
 pub mod my_sqrt;
 pub mod palindrome_number;
 pub mod plus_one;
+pub mod preorder_traversal;
 pub mod remove_duplicates;
 pub mod remove_element;
 pub mod roman_to_int;
