@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/is_symmetric.rs
 
 // 101. Symmetric Tree
-// https://leetcode.com/problems/symmetric-tree/
+// https://leetcode.com/problems/symmetric-tree/description/
 
 use crate::leet_code::common::tree_node::TreeNode;
 

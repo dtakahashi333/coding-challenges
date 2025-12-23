@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/two_sum.rs
 
 // 1. Two Sum
-// https://leetcode.com/problems/two-sum/
+// https://leetcode.com/problems/two-sum/description/
 
 use std::collections::HashMap;
 

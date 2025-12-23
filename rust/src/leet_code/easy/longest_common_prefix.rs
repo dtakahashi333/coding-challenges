@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/longest_common_prefix.rs
 
 // 14. Longest Common Prefix
-// https://leetcode.com/problems/longest-common-prefix/
+// https://leetcode.com/problems/longest-common-prefix/description/
 
 #[derive(Debug)]
 pub struct Solution;

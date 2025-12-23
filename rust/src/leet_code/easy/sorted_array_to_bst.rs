@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/sorted_array_to_bst.rs
 
 // 108. Convert Sorted Array to Binary Search Tree
-// https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+// https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
 
 use crate::leet_code::common::tree_node::TreeNode;
 

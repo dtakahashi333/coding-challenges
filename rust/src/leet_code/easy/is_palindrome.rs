@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/is_palindrome.rs
 
 // 125. Valid Palindrome
-// https://leetcode.com/problems/valid-palindrome/
+// https://leetcode.com/problems/valid-palindrome/description/
 
 #[derive(Debug)]
 pub struct Solution;

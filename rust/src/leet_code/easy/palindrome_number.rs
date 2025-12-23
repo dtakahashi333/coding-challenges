@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/palindrome_number.rs
 
 // 9. Palindrome Number
-// https://leetcode.com/problems/palindrome-number/
+// https://leetcode.com/problems/palindrome-number/description/
 
 #[derive(Debug)]
 pub struct Solution;

@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/add_binary.rs
 
 // 67. Add Binary
-// https://leetcode.com/problems/add-binary/
+// https://leetcode.com/problems/add-binary/description/
 
 use std::cmp;
 

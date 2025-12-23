@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/is_same_tree.rs
 
 // 100. Same Tree
-// https://leetcode.com/problems/same-tree/
+// https://leetcode.com/problems/same-tree/description/
 
 use crate::leet_code::common::tree_node::TreeNode;
 

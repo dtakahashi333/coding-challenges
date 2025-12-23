@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/valid_parentheses.rs
 
 // 20. Valid Parentheses
-// https://leetcode.com/problems/valid-parentheses/
+// https://leetcode.com/problems/valid-parentheses/description/
 
 #[derive(Debug)]
 struct Solution;

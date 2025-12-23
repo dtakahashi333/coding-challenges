@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/max_depth.rs
 
 // 104. Maximum Depth of Binary Tree
-// https://leetcode.com/problems/maximum-depth-of-binary-tree/
+// https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 
 use crate::leet_code::common::tree_node::TreeNode;
 

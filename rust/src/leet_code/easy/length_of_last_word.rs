@@ -1,7 +1,7 @@
 // rust/src/leet_code/eash/length_of_last_word.rs
 
 // 58. Length of Last Word
-// https://leetcode.com/problems/length-of-last-word/
+// https://leetcode.com/problems/length-of-last-word/description/
 
 #[derive(Debug)]
 pub struct Solution;

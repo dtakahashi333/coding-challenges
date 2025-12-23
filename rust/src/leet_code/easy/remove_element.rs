@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/remove_element.rs
 
 // 27. Remove Element
-// https://leetcode.com/problems/remove-element/
+// https://leetcode.com/problems/remove-element/description/
 
 #[derive(Debug)]
 pub struct Solution;

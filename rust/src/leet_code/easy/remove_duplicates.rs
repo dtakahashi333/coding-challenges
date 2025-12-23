@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/remove_duplicates.rs
 
 // 26. Remove Duplicates from Sorted Array
-// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 
 #[derive(Debug)]
 pub struct Solution;

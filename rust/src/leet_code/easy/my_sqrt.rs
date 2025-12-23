@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/my_sqrt.rs
 
 // 69. Sqrt(x)
-// https://leetcode.com/problems/sqrtx/
+// https://leetcode.com/problems/sqrtx/description/
 
 #[derive(Debug)]
 pub struct Solution;

@@ -1,7 +1,7 @@
 // rust/src/leet_code/easy/merge_two_lists.rs
 
 // 21. Merge Two Sorted Lists
-// https://leetcode.com/problems/merge-two-sorted-lists/
+// https://leetcode.com/problems/merge-two-sorted-lists/description/
 
 use crate::leet_code::common::list_node::ListNode;
 
