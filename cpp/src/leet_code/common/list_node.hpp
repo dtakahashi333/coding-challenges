@@ -15,3 +15,5 @@ struct ListNode
 };
 
 ListNode *vec_to_cyclic_list(const vector<int> &v, int pos = -1);
+ListNode *vec_to_list(const std::vector<int> &v);
+void attach_at(ListNode *headB, ListNode *headA, int pos);

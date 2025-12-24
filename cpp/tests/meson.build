@@ -1,11 +1,18 @@
-test_leet_code_easy_exe = executable(
+test_has_cycle_exe = executable(
   'test_has_cycle',
-  sources : files(
-    'leet_code/easy/test_has_cycle.cpp',
-  ),
+  ['leet_code/easy/test_has_cycle.cpp',],
   dependencies : [
     leet_code_easy_dep,
   ],
 )
 
-test('Linked List Cycle tests', test_leet_code_easy_exe)
+test_get_intersection_node_exe = executable(
+  'test_get_intersection_node',
+  ['leet_code/easy/test_get_intersection_node.cpp',],
+  dependencies : [
+    leet_code_easy_dep,
+  ],
+)
+
+test('Linked List Cycle tests', test_has_cycle_exe)
+test('Intersection of Two Linked Lists tests', test_get_intersection_node_exe)

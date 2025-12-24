@@ -5,6 +5,7 @@ leet_code_easy_lib = library(
     sources : files(
         'leet_code/common/list_node.cpp',
         'leet_code/easy/has_cycle.cpp',
+        'leet_code/easy/get_intersection_node.cpp',
     ),
     include_directories : inc,
 )
