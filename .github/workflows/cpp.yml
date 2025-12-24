@@ -1,0 +1,40 @@
+# .github/workflows/cpp.yml
+
+name: Cplusplus
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+    - cpp/**
+    - .github/workflows/cpp.yml
+  pull_request:
+    branches: [ "main" ]
+    paths:
+    - cpp/**
+    - .github/workflows/cpp.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y meson ninja-build g++
+
+    - name: Configure build
+      working-directory: ./cpp
+      run: meson setup build
+
+    - name: Build
+      working-directory: ./cpp
+      run: meson compile -C build
+
+    - name: Run tests
+      working-directory: ./cpp
+      run: meson test -C build
