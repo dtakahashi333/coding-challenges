@@ -4,7 +4,7 @@
 // https://leetcode.com/problems/valid-parentheses/description/
 
 #[derive(Debug)]
-struct Solution;
+pub struct Solution;
 
 impl Solution {
     #[allow(dead_code)]
