@@ -338,3 +338,106 @@ meson setup build
 If you want, I can show a **full working Meson project layout for your LeetCode folder structure** with **GoogleTest integrated**, ready to build and test.
 
 Do you want me to do that?
+
+
+Integrating GoogleTest (GTest) with the Meson build system is highly efficient because Meson has native support for finding GTest and running its test protocol.
+
+Here is the most modern and recommended way to set this up using **Meson Subprojects (WrapDB)** to ensure it works across all platforms regardless of whether GTest is installed on the system.
+
+---
+
+## 1. Set Up the Project Structure
+
+Create a directory for your project and a `subprojects` folder to hold GTest.
+
+```bash
+mkdir my_project && cd my_project
+mkdir subprojects
+meson init --language=cpp
+
+```
+
+## 2. Install the GTest Wrap
+
+Run the following command to download the GTest configuration file into your `subprojects` folder. This tells Meson how to fetch and build GTest as a dependency.
+
+```bash
+meson wrap install gtest
+
+```
+
+## 3. Configure `meson.build`
+
+Update your root `meson.build` file to include the GTest dependency and define your test executable.
+
+> **Note:** Meson 0.55+ supports `protocol: 'gtest'`, which allows the Meson test runner to understand GTest's output directly for better reporting.
+
+```python
+project('gtest_example', 'cpp', 
+  version : '0.1',
+  default_options : ['cpp_std=c++17'])
+
+# 1. Fetch GTest dependency (falls back to subproject if not on system)
+gtest_dep = dependency('gtest_main', fallback : ['gtest', 'gtest_main_dep'])
+
+# 2. Define your test executable
+test_exe = executable('unit_tests', 
+  'test_file.cpp', 
+  dependencies : gtest_dep)
+
+# 3. Register the test with Meson
+test('my_gtest', test_exe, protocol : 'gtest')
+
+```
+
+### Why use `gtest_main`?
+
+Using `gtest_main` (instead of just `gtest`) automatically links a default `main()` function that runs all your tests, so you don't have to write one yourself in your C++ code.
+
+---
+
+## 4. Write a Simple Test (`test_file.cpp`)
+
+Since we used `gtest_main`, your test file only needs the actual test cases:
+
+```cpp
+#include <gtest/gtest.h>
+
+TEST(HelloTest, BasicAssertions) {
+  EXPECT_STRNE("hello", "world");
+  EXPECT_EQ(7 * 6, 42);
+}
+
+```
+
+---
+
+## 5. Build and Run
+
+Execute these commands to compile and run your tests:
+
+```bash
+# Setup the build directory
+meson setup builddir
+
+# Compile the project
+meson compile -C builddir
+
+# Run the tests
+meson test -C builddir
+
+```
+
+### Useful Meson Test Commands
+
+| Command | Description |
+| --- | --- |
+| `meson test -v` | Run tests and show full GTest output (verbose). |
+| `meson test --list` | List all defined tests. |
+| `meson test <name>` | Run only a specific test suite by name. |
+| `meson test --gdb` | Run the test inside the GDB debugger. |
+
+Would you like me to show you how to link your own library sources to these tests so you can test your actual project code?
+
+[How to use Googletest and Meson to build C++ tests](https://www.youtube.com/watch?v=Tudwcpxpr6c)
+This video provides a step-by-step visual guide on setting up the GTest dependency within a Meson project and executing the tests.

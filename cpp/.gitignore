@@ -1,0 +1,8 @@
+# Ignore all downloaded subproject source directories
+subprojects/*
+
+# Do NOT ignore the .wrap files (they are your dependency manifests)
+!subprojects/*.wrap
+
+# Do NOT ignore custom patches or build overlays you've created
+!subprojects/packagefiles/
