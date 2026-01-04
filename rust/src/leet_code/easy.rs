@@ -27,6 +27,7 @@ pub mod postorder_traversal;
 pub mod preorder_traversal;
 pub mod remove_duplicates;
 pub mod remove_element;
+pub mod remove_elements;
 pub mod reverse_bits;
 pub mod roman_to_int;
 pub mod search_insert;
