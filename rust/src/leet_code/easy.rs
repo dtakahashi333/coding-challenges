@@ -25,6 +25,7 @@ pub mod merge;
 pub mod merge_two_lists;
 pub mod min_depth;
 pub mod my_sqrt;
+pub mod my_stack;
 pub mod palindrome_number;
 pub mod plus_one;
 pub mod postorder_traversal;
