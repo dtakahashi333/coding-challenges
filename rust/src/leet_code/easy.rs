@@ -15,6 +15,7 @@ pub mod is_balanced;
 pub mod is_happy;
 pub mod is_isomorphic;
 pub mod is_palindrome;
+pub mod is_power_of_two;
 pub mod is_same_tree;
 pub mod is_symmetric;
 pub mod length_of_last_word;
