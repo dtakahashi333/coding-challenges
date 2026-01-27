@@ -1,5 +1,7 @@
 // rust/src/leetcode/common/list_node.rs
 
+use core::fmt;
+
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -11,6 +13,33 @@ impl ListNode {
     #[inline]
     pub fn new(val: i32) -> Self {
         ListNode { next: None, val }
+    }
+}
+
+impl fmt::Display for ListNode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        // opening bracket
+        write!(f, "list: [")?;
+
+        let mut node = Some(self);
+        let mut first = true;
+        let mut count = 0;
+        while let Some(n) = node {
+            if !first {
+                write!(f, ", ")?; // add comma between nodes
+            }
+            write!(f, "{}", n.val)?; // write current value
+            node = n.next.as_deref();
+            first = false;
+            count += 1;
+        }
+
+        // closing bracket
+        writeln!(f, "]")?;
+
+        write!(f, "size: {}", count)?;
+
+        Ok(())
     }
 }
 

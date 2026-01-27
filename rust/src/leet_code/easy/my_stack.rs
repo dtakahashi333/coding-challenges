@@ -29,6 +29,7 @@ impl MyStack {
             self.q1.borrow_mut().push_back(x);
         }
     }
+
     pub fn pop(&self) -> i32 {
         let mut active;
         let mut spare;
@@ -60,6 +61,41 @@ impl MyStack {
     }
 }
 
+pub struct MyStack2 {
+    q: VecDeque<i32>,
+}
+
+/**
+ * `&self` means the method takes an immutable reference.
+ * If you need a mutable reference, change it to `&mut self` instead.
+ */
+impl MyStack2 {
+    pub fn new() -> Self {
+        MyStack2 { q: VecDeque::new() }
+    }
+
+    pub fn push(&mut self, x: i32) {
+        let mut spare = VecDeque::new();
+        spare.push_back(x);
+        while let Some(v) = self.q.pop_front() {
+            spare.push_back(v);
+        }
+        self.q = spare;
+    }
+
+    pub fn pop(&mut self) -> i32 {
+        self.q.pop_front().unwrap()
+    }
+
+    pub fn top(&self) -> i32 {
+        *self.q.front().unwrap()
+    }
+
+    pub fn empty(&self) -> bool {
+        self.q.is_empty()
+    }
+}
+
 /**
  * Your MyStack object will be instantiated and called as such:
  * let obj = MyStack::new();
@@ -74,11 +110,21 @@ mod tests {
 
     #[test]
     fn test1() {
-        let my_stack = MyStack::new();
-        my_stack.push(1);
-        my_stack.push(2);
-        assert_eq!(my_stack.top(), 2);
-        assert_eq!(my_stack.pop(), 2);
-        assert_eq!(my_stack.empty(), false);
+        let obj = MyStack::new();
+        obj.push(1);
+        obj.push(2);
+        assert_eq!(obj.top(), 2);
+        assert_eq!(obj.pop(), 2);
+        assert_eq!(obj.empty(), false);
+    }
+
+    #[test]
+    fn test2() {
+        let mut obj = MyStack2::new();
+        obj.push(1);
+        obj.push(2);
+        assert_eq!(obj.top(), 2);
+        assert_eq!(obj.pop(), 2);
+        assert_eq!(obj.empty(), false);
     }
 }
