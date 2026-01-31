@@ -1,4 +1,5 @@
 pub mod add_binary;
+pub mod binary_tree_paths;
 pub mod climb_stairs;
 pub mod contains_duplicate;
 pub mod contains_nearby_duplicate;
