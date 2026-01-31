@@ -11,6 +11,7 @@ pub mod hamming_weight;
 pub mod has_path_sum;
 pub mod inorder_traversal;
 pub mod invert_tree;
+pub mod is_anagram;
 pub mod is_balanced;
 pub mod is_happy;
 pub mod is_isomorphic;
