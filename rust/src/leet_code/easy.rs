@@ -7,6 +7,7 @@ pub mod contains_nearby_duplicate;
 pub mod convert_to_title;
 pub mod count_nodes;
 pub mod delete_duplicates;
+pub mod first_bad_version;
 pub mod generate;
 pub mod get_row;
 pub mod hamming_weight;
