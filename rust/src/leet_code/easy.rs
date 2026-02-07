@@ -55,3 +55,4 @@ pub mod summary_ranges;
 pub mod title_to_number;
 pub mod two_sum;
 pub mod valid_parentheses;
+pub mod word_pattern;
