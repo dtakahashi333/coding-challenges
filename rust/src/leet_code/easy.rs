@@ -33,6 +33,7 @@ pub mod merge;
 pub mod merge_two_lists;
 pub mod min_depth;
 pub mod missing_number;
+pub mod move_zeroes;
 pub mod my_queue;
 pub mod my_sqrt;
 pub mod my_stack;

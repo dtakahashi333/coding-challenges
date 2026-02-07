@@ -27,12 +27,8 @@ impl Solution {
 
     // The "Digital Root" Approach (O(1)) by Gemini
     pub fn add_digits2(num: i32) -> i32 {
-    if num == 0 { 
-        0 
-    } else { 
-        1 + (num - 1) % 9 
+        if num == 0 { 0 } else { 1 + (num - 1) % 9 }
     }
-}
 }
 
 #[cfg(test)]
