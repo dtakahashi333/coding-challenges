@@ -1,6 +1,7 @@
 pub mod add_binary;
 pub mod add_digits;
 pub mod binary_tree_paths;
+pub mod can_win_nim;
 pub mod climb_stairs;
 pub mod contains_duplicate;
 pub mod contains_nearby_duplicate;
@@ -37,6 +38,7 @@ pub mod move_zeroes;
 pub mod my_queue;
 pub mod my_sqrt;
 pub mod my_stack;
+pub mod num_array;
 pub mod palindrome_number;
 pub mod plus_one;
 pub mod postorder_traversal;
