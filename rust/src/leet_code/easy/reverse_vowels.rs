@@ -46,13 +46,12 @@ impl Solution {
 
         re.is_match(&ch.to_string())
     }
-    
+
     #[inline]
     fn is_vowel2(ch: char) -> bool {
         matches!(
             ch,
-            'a' | 'e' | 'i' | 'o' | 'u' |
-            'A' | 'E' | 'I' | 'O' | 'U'
+            'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U'
         )
     }
 }

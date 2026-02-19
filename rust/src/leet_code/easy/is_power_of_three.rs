@@ -21,8 +21,8 @@ impl Solution {
 
     // By ChatGPT
     pub fn is_power_of_three2(n: i32) -> bool {
-       // If n is a power of 3, it must divide the largest power of 3 evenly.
-       n > 0 && 1162261467 % n == 0
+        // If n is a power of 3, it must divide the largest power of 3 evenly.
+        n > 0 && 1162261467 % n == 0
     }
 }
 

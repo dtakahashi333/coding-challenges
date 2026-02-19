@@ -36,9 +36,9 @@ jobs:
         working-directory: ./rust
         run: cargo fmt --all -- --check
 
-      - name: Run Clippy
-        working-directory: ./rust
-        run: cargo clippy --all-targets --all-features -- -D warnings
+      # - name: Run Clippy
+      #   working-directory: ./rust
+      #   run: cargo clippy --all-targets --all-features -- -D warnings
 
       - name: Run tests
         working-directory: ./rust

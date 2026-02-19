@@ -21,7 +21,7 @@ impl Solution {
                 sum += digit * digit;
                 current /= 10;
             }
-            
+
             if sum == 1 {
                 return true;
             }
@@ -29,7 +29,7 @@ impl Solution {
                 return false;
             }
             set.insert(sum);
-            
+
             current = sum;
         }
     }

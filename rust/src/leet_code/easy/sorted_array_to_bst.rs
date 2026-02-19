@@ -49,12 +49,15 @@ mod tests {
         let s = Solution;
         let root = s.sorted_array_to_bst(nums);
         let result = bst_to_vec(root);
-        assert_eq!(result, vec![Some(0), Some(-10), Some(5), None, Some(-3), None, Some(9)]);
+        assert_eq!(
+            result,
+            vec![Some(0), Some(-10), Some(5), None, Some(-3), None, Some(9)]
+        );
     }
 
     #[test]
     fn test2() {
-        let nums = vec![1,3];
+        let nums = vec![1, 3];
         let s = Solution;
         let root = s.sorted_array_to_bst(nums);
         let result = bst_to_vec(root);
