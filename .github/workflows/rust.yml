@@ -2,29 +2,44 @@ name: Rust
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
     paths:
-    - rust/**
-    - .github/workflows/rust.yml
+      - rust/**
+      - .github/workflows/rust.yml
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
     paths:
-    - rust/**
-    - .github/workflows/rust.yml
+      - rust/**
+      - .github/workflows/rust.yml
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      working-directory: ./rust
-      run: cargo build --verbose
-    - name: Run tests
-      working-directory: ./rust
-      run: cargo test --verbose
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: rust
+
+      - name: Check formatting
+        working-directory: ./rust
+        run: cargo fmt --all -- --check
+
+      - name: Run Clippy
+        working-directory: ./rust
+        run: cargo clippy --all-targets --all-features -- -D warnings
+
+      - name: Run tests
+        working-directory: ./rust
+        run: cargo test --all-features --verbose
