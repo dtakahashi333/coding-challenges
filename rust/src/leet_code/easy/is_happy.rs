@@ -43,20 +43,20 @@ mod tests {
     fn test1() {
         let n = 19;
         let result = Solution::is_happy(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test2() {
         let n = 2;
         let result = Solution::is_happy(n);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test3() {
         let n = 7;
         let result = Solution::is_happy(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 }

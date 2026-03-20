@@ -55,7 +55,7 @@ mod tests {
             Some(7),
         ]);
         let result = Solution::is_balanced(root);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -72,13 +72,13 @@ mod tests {
             Some(4),
         ]);
         let result = Solution::is_balanced(root);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test3() {
         let root = vec_to_bst(vec![]);
         let result = Solution::is_balanced(root);
-        assert_eq!(result, true);
+        assert!(result);
     }
 }

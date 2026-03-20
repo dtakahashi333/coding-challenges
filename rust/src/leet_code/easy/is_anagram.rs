@@ -56,7 +56,7 @@ mod tests {
         let s = String::from("anagram");
         let t = String::from("nagaram");
         let result = Solution::is_anagram(s, t);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -64,6 +64,6 @@ mod tests {
         let s = String::from("rat");
         let t = String::from("car");
         let result = Solution::is_anagram(s, t);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 }

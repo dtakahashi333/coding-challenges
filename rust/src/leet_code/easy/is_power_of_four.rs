@@ -39,41 +39,41 @@ mod tests {
     fn test1() {
         let n = 16;
         let result = Solution::is_power_of_four(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test2() {
         let n = 5;
         let result = Solution::is_power_of_four(n);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test3() {
         let n = 1;
         let result = Solution::is_power_of_four(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test4() {
         let n = 16;
         let result = Solution::is_power_of_four2(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test5() {
         let n = 5;
         let result = Solution::is_power_of_four2(n);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test6() {
         let n = 1;
         let result = Solution::is_power_of_four2(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 }

@@ -79,7 +79,7 @@ mod tests {
         let nums = vec![1, 2, 3, 1];
         let k = 3;
         let result = Solution::contains_nearby_duplicate(nums, k);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -87,7 +87,7 @@ mod tests {
         let nums = vec![1, 0, 1, 1];
         let k = 1;
         let result = Solution::contains_nearby_duplicate(nums, k);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -95,7 +95,7 @@ mod tests {
         let nums = vec![1, 2, 3, 1, 2, 3];
         let k = 2;
         let result = Solution::contains_nearby_duplicate(nums, k);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -103,7 +103,7 @@ mod tests {
         let nums = vec![1, 2, 3, 1];
         let k = 3;
         let result = Solution::contains_nearby_duplicate2(nums, k);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -111,7 +111,7 @@ mod tests {
         let nums = vec![1, 0, 1, 1];
         let k = 1;
         let result = Solution::contains_nearby_duplicate2(nums, k);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -119,7 +119,7 @@ mod tests {
         let nums = vec![1, 2, 3, 1, 2, 3];
         let k = 2;
         let result = Solution::contains_nearby_duplicate2(nums, k);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -127,7 +127,7 @@ mod tests {
         let nums = vec![1, 2, 3, 1];
         let k = 3;
         let result = Solution::contains_nearby_duplicate3(nums, k);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -135,7 +135,7 @@ mod tests {
         let nums = vec![1, 0, 1, 1];
         let k = 1;
         let result = Solution::contains_nearby_duplicate3(nums, k);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -143,6 +143,6 @@ mod tests {
         let nums = vec![1, 2, 3, 1, 2, 3];
         let k = 2;
         let result = Solution::contains_nearby_duplicate3(nums, k);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 }

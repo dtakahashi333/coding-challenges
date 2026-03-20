@@ -13,7 +13,7 @@ pub struct Solution;
 
 impl Solution {
     #[allow(dead_code)]
-    pub fn is_symmetric(&self, root: Option<Rc<RefCell<TreeNode>>>) -> bool {
+    pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         if root.is_none() {
             return true;
         }
@@ -60,14 +60,15 @@ mod tests {
     use crate::leet_code::common::tree_node::vec_to_bst;
 
     #[test]
+    #[allow(clippy::useless_vec)]
     fn test1() {
         let root = vec_to_bst(vec![1, 2, 2, 3, 4, 4, 3].iter().map(|x| Some(*x)).collect());
-        let s = Solution;
-        let result = s.is_symmetric(root);
-        assert_eq!(result, true);
+        let result = Solution::is_symmetric(root);
+        assert!(result);
     }
 
     #[test]
+    #[allow(clippy::useless_vec)]
     fn test2() {
         let root = vec_to_bst(vec![
             Some(1),
@@ -78,8 +79,7 @@ mod tests {
             None,
             Some(3),
         ]);
-        let s = Solution;
-        let result = s.is_symmetric(root);
-        assert_eq!(result, false);
+        let result = Solution::is_symmetric(root);
+        assert!(!result);
     }
 }

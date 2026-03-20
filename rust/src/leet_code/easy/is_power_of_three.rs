@@ -34,54 +34,54 @@ mod tests {
     fn test1() {
         let n = 27;
         let result = Solution::is_power_of_three(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test2() {
         let n = 0;
         let result = Solution::is_power_of_three(n);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test3() {
         let n = -1;
         let result = Solution::is_power_of_three(n);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test4() {
         let n = 9;
         let result = Solution::is_power_of_three(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
     #[test]
     fn test5() {
         let n = 27;
         let result = Solution::is_power_of_three2(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test6() {
         let n = 0;
         let result = Solution::is_power_of_three2(n);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test7() {
         let n = -1;
         let result = Solution::is_power_of_three2(n);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test8() {
         let n = 9;
         let result = Solution::is_power_of_three2(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 }

@@ -114,21 +114,21 @@ mod tests {
     fn test1() {
         let head = vec_to_list(vec![1, 2, 2, 1]);
         let result = Solution::is_palindrome_linked_list(head);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test2() {
         let head = vec_to_list(vec![1, 2]);
         let result = Solution::is_palindrome_linked_list(head);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test3() {
         let head = vec_to_list(vec![1]);
         let result = Solution::is_palindrome_linked_list(head);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -139,6 +139,6 @@ mod tests {
             9, 8, 3, 5, 7, 5, 1, 2, 2, 1,
         ]);
         let result = Solution::is_palindrome_linked_list(head);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 }

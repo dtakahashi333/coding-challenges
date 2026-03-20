@@ -91,7 +91,7 @@ mod tests {
         let s = String::from("egg");
         let t = String::from("add");
         let result = Solution::is_isomorphic(s, t);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -99,7 +99,7 @@ mod tests {
         let s = String::from("foo");
         let t = String::from("bar");
         let result = Solution::is_isomorphic(s, t);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -107,6 +107,6 @@ mod tests {
         let s = String::from("paper");
         let t = String::from("title");
         let result = Solution::is_isomorphic(s, t);
-        assert_eq!(result, true);
+        assert!(result);
     }
 }

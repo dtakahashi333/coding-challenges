@@ -8,7 +8,7 @@ pub struct Solution;
 
 impl Solution {
     #[allow(clippy::ptr_arg)]
-    pub fn remove_element(&self, nums: &mut Vec<i32>, val: i32) -> i32 {
+    pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
         let mut k = 0_usize;
         for i in 0..nums.len() {
             if nums[i] != val {
@@ -25,11 +25,11 @@ mod tests {
     use super::*;
 
     #[test]
+    #[allow(clippy::useless_vec)]
     fn test1() {
         let mut nums = vec![3, 2, 2, 3];
         let val = 3;
-        let s = Solution;
-        let k = s.remove_element(&mut nums, val);
+        let k = Solution::remove_element(&mut nums, val);
         assert_eq!(k, 2);
         let expected = vec![2, 2];
         for i in 0..k as usize {
@@ -38,11 +38,11 @@ mod tests {
     }
 
     #[test]
+    #[allow(clippy::useless_vec)]
     fn test2() {
         let mut nums = vec![0, 1, 2, 2, 3, 0, 4, 2];
         let val = 2;
-        let s = Solution;
-        let k = s.remove_element(&mut nums, val);
+        let k = Solution::remove_element(&mut nums, val);
         nums[0..k as usize].sort();
         assert_eq!(k, 5);
         let mut expected = vec![0, 1, 4, 0, 3];

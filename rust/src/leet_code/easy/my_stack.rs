@@ -117,7 +117,7 @@ mod tests {
         obj.push(2);
         assert_eq!(obj.top(), 2);
         assert_eq!(obj.pop(), 2);
-        assert_eq!(obj.empty(), false);
+        assert!(!obj.empty());
     }
 
     #[test]
@@ -127,6 +127,6 @@ mod tests {
         obj.push(2);
         assert_eq!(obj.top(), 2);
         assert_eq!(obj.pop(), 2);
-        assert_eq!(obj.empty(), false);
+        assert!(!obj.empty());
     }
 }

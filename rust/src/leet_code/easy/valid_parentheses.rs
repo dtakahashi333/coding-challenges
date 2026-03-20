@@ -41,41 +41,41 @@ mod tests {
     fn test1() {
         let parentheses = "()".to_string();
         let result = Solution::is_valid(parentheses);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test2() {
         let parentheses = "()[]{}".to_string();
         let result = Solution::is_valid(parentheses);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test3() {
         let parentheses = "(]".to_string();
         let result = Solution::is_valid(parentheses);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test4() {
         let parentheses = "([])".to_string();
         let result = Solution::is_valid(parentheses);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test5() {
         let parentheses = "([)]".to_string();
         let result = Solution::is_valid(parentheses);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test6() {
         let parentheses = "[".to_string();
         let result = Solution::is_valid(parentheses);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 }

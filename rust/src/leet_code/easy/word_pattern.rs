@@ -73,7 +73,7 @@ mod tests {
         let pattern = String::from("abba");
         let s = String::from("dog cat cat dog");
         let result = Solution::word_pattern(pattern, s);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -81,7 +81,7 @@ mod tests {
         let pattern = String::from("abba");
         let s = String::from("dog cat cat fish");
         let result = Solution::word_pattern(pattern, s);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -89,7 +89,7 @@ mod tests {
         let pattern = String::from("aaaa");
         let s = String::from("dog cat cat dog");
         let result = Solution::word_pattern(pattern, s);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -97,7 +97,7 @@ mod tests {
         let pattern = String::from("abca");
         let s = String::from("dog cat cat dog");
         let result = Solution::word_pattern(pattern, s);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -105,7 +105,7 @@ mod tests {
         let pattern = String::from("abba");
         let s = String::from("dog cat cat dog");
         let result = Solution::word_pattern2(pattern, s);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -113,7 +113,7 @@ mod tests {
         let pattern = String::from("abba");
         let s = String::from("dog cat cat fish");
         let result = Solution::word_pattern2(pattern, s);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -121,7 +121,7 @@ mod tests {
         let pattern = String::from("aaaa");
         let s = String::from("dog cat cat dog");
         let result = Solution::word_pattern2(pattern, s);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -129,6 +129,6 @@ mod tests {
         let pattern = String::from("abca");
         let s = String::from("dog cat cat dog");
         let result = Solution::word_pattern2(pattern, s);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 }

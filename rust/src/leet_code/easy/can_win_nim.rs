@@ -20,20 +20,20 @@ mod tests {
     fn test1() {
         let n = 4;
         let result = Solution::can_win_nim(n);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
     fn test2() {
         let n = 1;
         let result = Solution::can_win_nim(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
     fn test3() {
         let n = 2;
         let result = Solution::can_win_nim(n);
-        assert_eq!(result, true);
+        assert!(result);
     }
 }

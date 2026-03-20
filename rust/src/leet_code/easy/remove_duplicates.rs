@@ -44,6 +44,7 @@ mod tests {
     use super::*;
 
     #[test]
+    #[allow(clippy::useless_vec)]
     fn test1() {
         let mut nums = vec![1, 1, 2];
         let result = Solution::remove_duplicates(&mut nums);
@@ -55,6 +56,7 @@ mod tests {
     }
 
     #[test]
+    #[allow(clippy::useless_vec)]
     fn test2() {
         let mut nums = vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
         let result = Solution::remove_duplicates(&mut nums);

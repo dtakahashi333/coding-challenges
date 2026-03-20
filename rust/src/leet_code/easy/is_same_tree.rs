@@ -68,7 +68,7 @@ mod tests {
         let q = vec_to_bst(vec![Some(1), Some(2), Some(2)]);
         let s = Solution;
         let result = s.is_same_tree(p, q);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -77,7 +77,7 @@ mod tests {
         let q = vec_to_bst(vec![Some(1), None, Some(2)]);
         let s = Solution;
         let result = s.is_same_tree(p, q);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -86,7 +86,7 @@ mod tests {
         let q = vec_to_bst(vec![Some(1), Some(1), Some(2)]);
         let s = Solution;
         let result = s.is_same_tree(p, q);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -95,7 +95,7 @@ mod tests {
         let q = vec_to_bst(vec![Some(0)]);
         let s = Solution;
         let result = s.is_same_tree(p, q);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -104,6 +104,6 @@ mod tests {
         let q = vec_to_bst(vec![Some(1), None, Some(2)]);
         let s = Solution;
         let result = s.is_same_tree(p, q);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 }

@@ -92,7 +92,7 @@ mod tests {
         ]);
         let target_sum = 22;
         let result = Solution::has_path_sum(root, target_sum);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -100,7 +100,7 @@ mod tests {
         let root = vec_to_bst(vec![Some(1), Some(2), Some(3)]);
         let target_sum = 5;
         let result = Solution::has_path_sum(root, target_sum);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -108,7 +108,7 @@ mod tests {
         let root = vec_to_bst(vec![]);
         let target_sum = 0;
         let result = Solution::has_path_sum(root, target_sum);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -116,7 +116,7 @@ mod tests {
         let root = vec_to_bst(vec![Some(1), Some(2)]);
         let target_sum = 1;
         let result = Solution::has_path_sum(root, target_sum);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -133,7 +133,7 @@ mod tests {
         ]);
         let target_sum = 3;
         let result = Solution::has_path_sum(root, target_sum);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -150,6 +150,6 @@ mod tests {
         ]);
         let target_sum = -4;
         let result = Solution::has_path_sum(root, target_sum);
-        assert_eq!(result, true);
+        assert!(result);
     }
 }

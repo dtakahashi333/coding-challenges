@@ -42,7 +42,7 @@ mod tests {
         let phrase = String::from("A man, a plan, a canal: Panama");
         let s = Solution;
         let result = s.is_palindrome(phrase);
-        assert_eq!(result, true);
+        assert!(result);
     }
 
     #[test]
@@ -50,7 +50,7 @@ mod tests {
         let phrase = String::from("race a car");
         let s = Solution;
         let result = s.is_palindrome(phrase);
-        assert_eq!(result, false);
+        assert!(!result);
     }
 
     #[test]
@@ -58,6 +58,6 @@ mod tests {
         let phrase = String::from(" ");
         let s = Solution;
         let result = s.is_palindrome(phrase);
-        assert_eq!(result, true);
+        assert!(result);
     }
 }
