@@ -77,12 +77,12 @@ pub fn build_tree2(values: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
             queue.push_back(left);
         }
         i += 1;
-        if i < values.len() {
-            if let Some(val) = values[i] {
-                let right = Rc::new(RefCell::new(TreeNode::new(val)));
-                node.borrow_mut().right = Some(Rc::clone(&right));
-                queue.push_back(right);
-            }
+        if i < values.len()
+            && let Some(val) = values[i]
+        {
+            let right = Rc::new(RefCell::new(TreeNode::new(val)));
+            node.borrow_mut().right = Some(Rc::clone(&right));
+            queue.push_back(right);
         }
         i += 1;
     }

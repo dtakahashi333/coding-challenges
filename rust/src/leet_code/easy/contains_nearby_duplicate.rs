@@ -7,17 +7,14 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn contains_nearby_duplicate(nums: Vec<i32>, k: i32) -> bool {
         let size = nums.len();
         let mut start = 0_usize;
         let mut end = start + k as usize;
         for i in start..end {
             for j in i + 1..=end {
-                if i < size && j < size {
-                    if nums[i] == nums[j] {
-                        return true;
-                    }
+                if i < size && j < size && nums[i] == nums[j] {
+                    return true;
                 }
             }
         }
@@ -61,10 +58,10 @@ impl Solution {
         let k = k as usize;
 
         for (i, &n) in nums.iter().enumerate() {
-            if let Some(prev_index) = last_seen.get(&n) {
-                if i - prev_index <= k {
-                    return true;
-                }
+            if let Some(prev_index) = last_seen.get(&n)
+                && i - prev_index <= k
+            {
+                return true;
             }
             last_seen.insert(n, i);
         }

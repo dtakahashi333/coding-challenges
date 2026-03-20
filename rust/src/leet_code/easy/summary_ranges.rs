@@ -17,7 +17,7 @@ impl Solution {
         let mut prev = nums[0] as i64;
         for n in nums.iter().skip(1) {
             let x = *n as i64;
-            if x as i64 - prev > 1 {
+            if x - prev > 1 {
                 if start == prev {
                     ranges.push(start.to_string());
                 } else {

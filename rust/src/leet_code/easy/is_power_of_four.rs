@@ -27,7 +27,7 @@ impl Solution {
             let mask = 0b0101_0101_0101_0101_0101_0101_0101_0101;
             return n & mask != 0;
         }
-        return false;
+        false
     }
 }
 

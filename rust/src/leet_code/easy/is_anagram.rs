@@ -28,7 +28,7 @@ impl Solution {
         }
 
         map.retain(|_, v| *v != 0);
-        map.len() == 0
+        map.is_empty()
     }
 
     pub fn is_anagram2(s: &str, t: &str) -> bool {

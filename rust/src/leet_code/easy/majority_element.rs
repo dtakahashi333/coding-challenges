@@ -7,8 +7,8 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn majority_element(&self, nums: Vec<i32>) -> i32 {
+    #[allow(clippy::ptr_arg)]
+    pub fn majority_element(nums: Vec<i32>) -> i32 {
         use std::collections::HashMap;
 
         let mut map: HashMap<i32, i32> = HashMap::new();
@@ -19,17 +19,18 @@ impl Solution {
             }
         }
 
-        *map.iter().max_by_key(|(_, v)| *v).map(|(k, _)| k).unwrap() as i32
+        *map.iter().max_by_key(|(_, v)| *v).map(|(k, _)| k).unwrap()
     }
 
-    #[allow(dead_code)]
-    pub fn majority_element2(&self, nums: Vec<i32>) -> i32 {
+    #[allow(clippy::ptr_arg)]
+    pub fn majority_element2(nums: Vec<i32>) -> i32 {
         let mut nums = nums;
         nums.sort();
         nums[nums.len() / 2]
     }
 
     // Boyer–Moore Voting Algorithm
+    #[allow(clippy::ptr_arg)]
     pub fn majority_element3(nums: Vec<i32>) -> i32 {
         let mut count = 0;
         let mut candidate = 0;
@@ -52,32 +53,42 @@ mod tests {
     #[test]
     fn test1() {
         let nums = vec![3, 2, 3];
-        let s = Solution;
-        let result = s.majority_element(nums);
+        let result = Solution::majority_element(nums);
         assert_eq!(result, 3);
     }
 
     #[test]
     fn test2() {
         let nums = vec![2, 2, 1, 1, 1, 2, 2];
-        let s = Solution;
-        let result = s.majority_element(nums);
+        let result = Solution::majority_element(nums);
         assert_eq!(result, 2);
     }
 
     #[test]
     fn test3() {
         let nums = vec![3, 2, 3];
-        let s = Solution;
-        let result = s.majority_element2(nums);
+        let result = Solution::majority_element2(nums);
         assert_eq!(result, 3);
     }
 
     #[test]
     fn test4() {
         let nums = vec![2, 2, 1, 1, 1, 2, 2];
-        let s = Solution;
-        let result = s.majority_element2(nums);
+        let result = Solution::majority_element2(nums);
+        assert_eq!(result, 2);
+    }
+
+    #[test]
+    fn test5() {
+        let nums = vec![3, 2, 3];
+        let result = Solution::majority_element3(nums);
+        assert_eq!(result, 3);
+    }
+
+    #[test]
+    fn test6() {
+        let nums = vec![2, 2, 1, 1, 1, 2, 2];
+        let result = Solution::majority_element3(nums);
         assert_eq!(result, 2);
     }
 }

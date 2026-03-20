@@ -9,8 +9,7 @@ use std::collections::HashMap;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn two_sum(&self, nums: Vec<i32>, target: i32) -> Vec<i32> {
+    pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         let mut map = HashMap::new();
         let mut result = Vec::new();
         for (i, num) in nums.iter().enumerate() {
@@ -35,8 +34,7 @@ mod tests {
     fn test1() {
         let nums = vec![2, 7, 11, 15];
         let target = 9;
-        let s = Solution;
-        let mut result = s.two_sum(nums, target);
+        let mut result = Solution::two_sum(nums, target);
         result.sort();
         assert_eq!(result, vec![0, 1]);
     }
@@ -45,8 +43,7 @@ mod tests {
     fn test2() {
         let nums = vec![3, 2, 4];
         let target = 6;
-        let s = Solution;
-        let mut result = s.two_sum(nums, target);
+        let mut result = Solution::two_sum(nums, target);
         result.sort();
         assert_eq!(result, vec![1, 2]);
     }
@@ -55,8 +52,7 @@ mod tests {
     fn test3() {
         let nums = vec![3, 3];
         let target = 6;
-        let s = Solution;
-        let mut result = s.two_sum(nums, target);
+        let mut result = Solution::two_sum(nums, target);
         result.sort();
         assert_eq!(result, vec![0, 1]);
     }

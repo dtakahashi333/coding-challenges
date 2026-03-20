@@ -7,13 +7,12 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn climb_stairs(&self, n: i32) -> i32 {
+    pub fn climb_stairs(n: i32) -> i32 {
         let mut dp = vec![-1; (n + 1) as usize];
-        self.climb_stairs_helper(n, &mut dp)
+        Self::climb_stairs_helper(n, &mut dp)
     }
 
-    fn climb_stairs_helper(&self, n: i32, dp: &mut Vec<i32>) -> i32 {
+    fn climb_stairs_helper(n: i32, dp: &mut Vec<i32>) -> i32 {
         if n == 0 {
             return 1;
         }
@@ -23,11 +22,11 @@ impl Solution {
         let mut result = 0;
         // 2 steps
         if n >= 2 {
-            result += self.climb_stairs_helper(n - 2, dp);
+            result += Self::climb_stairs_helper(n - 2, dp);
         }
         // 1 step
         if n >= 1 {
-            result += self.climb_stairs_helper(n - 1, dp);
+            result += Self::climb_stairs_helper(n - 1, dp);
         }
         dp[n as usize] = result;
         result
@@ -41,16 +40,14 @@ mod tests {
     #[test]
     fn test1() {
         let n = 2;
-        let s = Solution;
-        let result = s.climb_stairs(n);
+        let result = Solution::climb_stairs(n);
         assert_eq!(result, 2);
     }
 
     #[test]
     fn test2() {
         let n = 3;
-        let s = Solution;
-        let result = s.climb_stairs(n);
+        let result = Solution::climb_stairs(n);
         assert_eq!(result, 3);
     }
 }

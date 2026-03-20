@@ -1,3 +1,5 @@
+// rust/src/dsa/binary_tree/tree_node.rs
+
 use std::collections::VecDeque;
 
 #[derive(Debug)]
@@ -9,7 +11,6 @@ pub struct TreeNode {
 
 impl TreeNode {
     /// Constructs a new TreeNode with the given value and no children.
-    #[allow(dead_code)] // 👈 Keep this to silence the warning
     pub fn new(value: i32) -> Self {
         TreeNode {
             value,
@@ -19,7 +20,7 @@ impl TreeNode {
     }
 }
 
-#[allow(dead_code)]
+#[allow(clippy::ptr_arg)]
 pub fn build_binary_tree(list: &Vec<Option<i32>>) -> Option<TreeNode> {
     if list.is_empty() || list[0].is_none() {
         return None;
@@ -33,27 +34,21 @@ pub fn build_binary_tree(list: &Vec<Option<i32>>) -> Option<TreeNode> {
     let mut i = 1;
     while i < list.len() {
         if let Some(front) = queue.pop_front() {
-            match list[i] {
-                Some(value) => {
-                    front.left = Some(Box::new(TreeNode::new(value)));
-                    if let Some(ref mut left_node) = front.left {
-                        queue.push_back(left_node.as_mut());
-                    }
+            if let Some(value) = list[i] {
+                front.left = Some(Box::new(TreeNode::new(value)));
+                if let Some(ref mut left_node) = front.left {
+                    queue.push_back(left_node.as_mut());
                 }
-                None => {}
             }
 
             i += 1;
 
             if i < list.len() {
-                match list[i] {
-                    Some(value) => {
-                        front.right = Some(Box::new(TreeNode::new(value)));
-                        if let Some(ref mut right_node) = front.right {
-                            queue.push_back(right_node.as_mut());
-                        }
+                if let Some(value) = list[i] {
+                    front.right = Some(Box::new(TreeNode::new(value)));
+                    if let Some(ref mut right_node) = front.right {
+                        queue.push_back(right_node.as_mut());
                     }
-                    None => {}
                 }
 
                 i += 1;

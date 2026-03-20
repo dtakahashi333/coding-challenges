@@ -7,8 +7,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn is_valid(&self, s: String) -> bool {
+    pub fn is_valid(s: String) -> bool {
         let mut stack = Vec::new();
         for c in s.chars() {
             match c {
@@ -41,48 +40,42 @@ mod tests {
     #[test]
     fn test1() {
         let parentheses = "()".to_string();
-        let s = Solution;
-        let result = s.is_valid(parentheses);
+        let result = Solution::is_valid(parentheses);
         assert_eq!(result, true);
     }
 
     #[test]
     fn test2() {
         let parentheses = "()[]{}".to_string();
-        let s = Solution;
-        let result = s.is_valid(parentheses);
+        let result = Solution::is_valid(parentheses);
         assert_eq!(result, true);
     }
 
     #[test]
     fn test3() {
         let parentheses = "(]".to_string();
-        let s = Solution;
-        let result = s.is_valid(parentheses);
+        let result = Solution::is_valid(parentheses);
         assert_eq!(result, false);
     }
 
     #[test]
     fn test4() {
         let parentheses = "([])".to_string();
-        let s = Solution;
-        let result = s.is_valid(parentheses);
+        let result = Solution::is_valid(parentheses);
         assert_eq!(result, true);
     }
 
     #[test]
     fn test5() {
         let parentheses = "([)]".to_string();
-        let s = Solution;
-        let result = s.is_valid(parentheses);
+        let result = Solution::is_valid(parentheses);
         assert_eq!(result, false);
     }
 
     #[test]
     fn test6() {
         let parentheses = "[".to_string();
-        let s = Solution;
-        let result = s.is_valid(parentheses);
+        let result = Solution::is_valid(parentheses);
         assert_eq!(result, false);
     }
 }

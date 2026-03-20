@@ -7,6 +7,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::ptr_arg)]
     pub fn reverse_string(s: &mut Vec<char>) {
         let len = s.len();
         for i in 0..len / 2 {
@@ -15,6 +16,7 @@ impl Solution {
     }
 
     // More Idiomatic (Two-Pointer Style) by ChatGPT
+    #[allow(clippy::ptr_arg)]
     pub fn reverse_string2(s: &mut Vec<char>) {
         let mut left = 0;
         let mut right = s.len().saturating_sub(1);

@@ -7,8 +7,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn convert_to_title(&self, column_number: i32) -> String {
+    pub fn convert_to_title(column_number: i32) -> String {
         use std::collections::VecDeque;
         let mut char_list: VecDeque<char> = VecDeque::new();
         let mut num = column_number;
@@ -29,24 +28,21 @@ mod tests {
     #[test]
     fn test1() {
         let column_number = 1;
-        let s = Solution;
-        let result = s.convert_to_title(column_number);
+        let result = Solution::convert_to_title(column_number);
         assert_eq!(result, "A");
     }
 
     #[test]
     fn test2() {
         let column_number = 28;
-        let s = Solution;
-        let result = s.convert_to_title(column_number);
+        let result = Solution::convert_to_title(column_number);
         assert_eq!(result, "AB");
     }
 
     #[test]
     fn test3() {
         let column_number = 701;
-        let s = Solution;
-        let result = s.convert_to_title(column_number);
+        let result = Solution::convert_to_title(column_number);
         assert_eq!(result, "ZY");
     }
 }

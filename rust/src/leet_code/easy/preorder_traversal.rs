@@ -12,28 +12,25 @@ use std::rc::Rc;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn preorder_traversal_recursive(&self, root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    pub fn preorder_traversal_recursive(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
-        self.preorder_traversal_recursive_helper(&root, &mut result);
+        Self::preorder_traversal_recursive_helper(&root, &mut result);
         result
     }
 
     fn preorder_traversal_recursive_helper(
-        &self,
         node: &Option<Rc<RefCell<TreeNode>>>,
         result: &mut Vec<i32>,
     ) {
         if let Some(n) = node {
             let n_ref = n.borrow();
             result.push(n_ref.val);
-            self.preorder_traversal_recursive_helper(&n_ref.left, result);
-            self.preorder_traversal_recursive_helper(&n_ref.right, result);
+            Self::preorder_traversal_recursive_helper(&n_ref.left, result);
+            Self::preorder_traversal_recursive_helper(&n_ref.right, result);
         }
     }
 
-    #[allow(dead_code)]
-    pub fn preorder_traversal(&self, root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
         if root.is_none() {
             return result;
@@ -62,7 +59,7 @@ impl Solution {
     }
 
     #[allow(dead_code)]
-    pub fn preorder_traversal2(&self, root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    pub fn preorder_traversal2(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
         if root.is_none() {
             return result;
@@ -95,8 +92,7 @@ mod tests {
     fn test1() {
         let list = vec![Some(1), None, Some(2), Some(3)];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal_recursive(root);
+        let result = Solution::preorder_traversal_recursive(root);
         assert_eq!(result, vec![1, 2, 3]);
     }
 
@@ -117,8 +113,7 @@ mod tests {
             Some(9),
         ];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal_recursive(root);
+        let result = Solution::preorder_traversal_recursive(root);
         assert_eq!(result, vec![1, 2, 4, 5, 6, 7, 3, 8, 9]);
     }
 
@@ -126,8 +121,7 @@ mod tests {
     fn test3() {
         let list = vec![];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal_recursive(root);
+        let result = Solution::preorder_traversal_recursive(root);
         assert_eq!(result, vec![]);
     }
 
@@ -135,8 +129,7 @@ mod tests {
     fn test4() {
         let list = vec![Some(1)];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal_recursive(root);
+        let result = Solution::preorder_traversal_recursive(root);
         assert_eq!(result, vec![1]);
     }
 
@@ -144,8 +137,7 @@ mod tests {
     fn test5() {
         let list = vec![Some(1), None, Some(2), Some(3)];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal(root);
+        let result = Solution::preorder_traversal(root);
         assert_eq!(result, vec![1, 2, 3]);
     }
 
@@ -166,8 +158,7 @@ mod tests {
             Some(9),
         ];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal(root);
+        let result = Solution::preorder_traversal(root);
         assert_eq!(result, vec![1, 2, 4, 5, 6, 7, 3, 8, 9]);
     }
 
@@ -175,8 +166,7 @@ mod tests {
     fn test7() {
         let list = vec![];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal(root);
+        let result = Solution::preorder_traversal(root);
         assert_eq!(result, vec![]);
     }
 
@@ -184,8 +174,7 @@ mod tests {
     fn test8() {
         let list = vec![Some(1)];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal(root);
+        let result = Solution::preorder_traversal(root);
         assert_eq!(result, vec![1]);
     }
 
@@ -193,8 +182,7 @@ mod tests {
     fn test9() {
         let list = vec![Some(1), None, Some(2), Some(3)];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal2(root);
+        let result = Solution::preorder_traversal2(root);
         assert_eq!(result, vec![1, 2, 3]);
     }
 
@@ -215,8 +203,7 @@ mod tests {
             Some(9),
         ];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal2(root);
+        let result = Solution::preorder_traversal2(root);
         assert_eq!(result, vec![1, 2, 4, 5, 6, 7, 3, 8, 9]);
     }
 
@@ -224,8 +211,7 @@ mod tests {
     fn test11() {
         let list = vec![];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal2(root);
+        let result = Solution::preorder_traversal2(root);
         assert_eq!(result, vec![]);
     }
 
@@ -233,8 +219,7 @@ mod tests {
     fn test12() {
         let list = vec![Some(1)];
         let root = vec_to_bst(list);
-        let s = Solution;
-        let result = s.preorder_traversal2(root);
+        let result = Solution::preorder_traversal2(root);
         assert_eq!(result, vec![1]);
     }
 }

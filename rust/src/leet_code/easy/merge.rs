@@ -7,8 +7,8 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn merge(&self, nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
+    #[allow(clippy::ptr_arg)]
+    pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
         let m = m as usize;
         let n = n as usize;
         let nums1_copy = nums1.clone();
@@ -35,8 +35,8 @@ impl Solution {
         }
     }
 
-    #[allow(dead_code)]
-    pub fn merge2(&self, nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
+    #[allow(clippy::ptr_arg)]
+    pub fn merge2(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
         let mut i = (m - 1) as isize;
         let mut j = (n - 1) as isize;
         let mut k = (m + n - 1) as isize;
@@ -71,8 +71,7 @@ mod tests {
         let m = 3;
         let mut nums2 = vec![2, 5, 6];
         let n = 3;
-        let s = Solution;
-        s.merge(&mut nums1, m, &mut nums2, n);
+        Solution::merge(&mut nums1, m, &mut nums2, n);
         assert_eq!(nums1, vec![1, 2, 2, 3, 5, 6]);
     }
 
@@ -82,8 +81,7 @@ mod tests {
         let m = 1;
         let mut nums2 = vec![];
         let n = 0;
-        let s = Solution;
-        s.merge(&mut nums1, m, &mut nums2, n);
+        Solution::merge(&mut nums1, m, &mut nums2, n);
         assert_eq!(nums1, vec![1]);
     }
 
@@ -93,8 +91,7 @@ mod tests {
         let m = 0;
         let mut nums2 = vec![1];
         let n = 1;
-        let s = Solution;
-        s.merge(&mut nums1, m, &mut nums2, n);
+        Solution::merge(&mut nums1, m, &mut nums2, n);
         assert_eq!(nums1, vec![1]);
     }
 
@@ -104,8 +101,7 @@ mod tests {
         let m = 1;
         let mut nums2 = vec![1];
         let n = 1;
-        let s = Solution;
-        s.merge(&mut nums1, m, &mut nums2, n);
+        Solution::merge(&mut nums1, m, &mut nums2, n);
         assert_eq!(nums1, vec![1, 2]);
     }
     #[test]
@@ -114,8 +110,7 @@ mod tests {
         let m = 3;
         let mut nums2 = vec![2, 5, 6];
         let n = 3;
-        let s = Solution;
-        s.merge2(&mut nums1, m, &mut nums2, n);
+        Solution::merge2(&mut nums1, m, &mut nums2, n);
         assert_eq!(nums1, vec![1, 2, 2, 3, 5, 6]);
     }
 
@@ -125,8 +120,7 @@ mod tests {
         let m = 1;
         let mut nums2 = vec![];
         let n = 0;
-        let s = Solution;
-        s.merge2(&mut nums1, m, &mut nums2, n);
+        Solution::merge2(&mut nums1, m, &mut nums2, n);
         assert_eq!(nums1, vec![1]);
     }
 
@@ -136,8 +130,7 @@ mod tests {
         let m = 0;
         let mut nums2 = vec![1];
         let n = 1;
-        let s = Solution;
-        s.merge2(&mut nums1, m, &mut nums2, n);
+        Solution::merge2(&mut nums1, m, &mut nums2, n);
         assert_eq!(nums1, vec![1]);
     }
 
@@ -147,8 +140,7 @@ mod tests {
         let m = 1;
         let mut nums2 = vec![1];
         let n = 1;
-        let s = Solution;
-        s.merge2(&mut nums1, m, &mut nums2, n);
+        Solution::merge2(&mut nums1, m, &mut nums2, n);
         assert_eq!(nums1, vec![1, 2]);
     }
 }

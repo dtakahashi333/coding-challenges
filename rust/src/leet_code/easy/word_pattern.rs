@@ -19,16 +19,16 @@ impl Solution {
         let mut map2 = HashMap::new();
         for (ch, &word) in chars.iter().zip(words.iter()) {
             map1.entry(ch).or_insert(word);
-            if let Some(&w) = map1.get(&ch) {
-                if w != word {
-                    return false;
-                }
+            if let Some(&w) = map1.get(&ch)
+                && w != word
+            {
+                return false;
             }
             map2.entry(word).or_insert(ch);
-            if let Some(&c) = map2.get(word) {
-                if c != ch {
-                    return false;
-                }
+            if let Some(&c) = map2.get(word)
+                && c != ch
+            {
+                return false;
             }
         }
         true

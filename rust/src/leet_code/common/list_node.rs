@@ -44,7 +44,6 @@ impl fmt::Display for ListNode {
 }
 
 // Helper: convert Vec<i32> → Option<Box<ListNode>>
-#[allow(dead_code)]
 pub fn vec_to_list(nums: Vec<i32>) -> Option<Box<ListNode>> {
     let mut current = None;
 
@@ -58,7 +57,6 @@ pub fn vec_to_list(nums: Vec<i32>) -> Option<Box<ListNode>> {
 }
 
 // Helper: convert Option<Box<ListNode>> → Vec<i32>
-#[allow(dead_code)]
 pub fn list_to_vec(mut list: Option<Box<ListNode>>) -> Vec<i32> {
     let mut result = vec![];
 

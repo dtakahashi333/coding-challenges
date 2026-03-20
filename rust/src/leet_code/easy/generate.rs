@@ -8,7 +8,7 @@ pub struct Solution;
 
 impl Solution {
     #[allow(dead_code)]
-    pub fn generate(&self, num_rows: i32) -> Vec<Vec<i32>> {
+    pub fn generate(num_rows: i32) -> Vec<Vec<i32>> {
         match num_rows {
             0 => vec![],
             1 => vec![vec![1]],
@@ -41,8 +41,7 @@ mod tests {
     #[test]
     fn test1() {
         let num_rows = 5;
-        let s = Solution;
-        let result = s.generate(num_rows);
+        let result = Solution::generate(num_rows);
         assert_eq!(
             result,
             vec![
@@ -58,8 +57,7 @@ mod tests {
     #[test]
     fn test2() {
         let num_rows = 1;
-        let s = Solution;
-        let result = s.generate(num_rows);
+        let result = Solution::generate(num_rows);
         assert_eq!(result, vec![vec![1]]);
     }
 }

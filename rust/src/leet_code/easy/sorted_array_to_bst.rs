@@ -12,16 +12,14 @@ use std::rc::Rc;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn sorted_array_to_bst(&self, nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
+    pub fn sorted_array_to_bst(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
         if nums.is_empty() {
             return None;
         }
-        self.sorted_array_to_bst_helper(&nums, 0, (nums.len() - 1) as isize)
+        Self::sorted_array_to_bst_helper(&nums, 0, (nums.len() - 1) as isize)
     }
 
     fn sorted_array_to_bst_helper(
-        &self,
         nums: &Vec<i32>,
         start: isize,
         end: isize,
@@ -31,8 +29,8 @@ impl Solution {
         }
         let mid = start + (end - start) / 2;
         let node = Rc::new(RefCell::new(TreeNode::new(nums[mid as usize])));
-        node.borrow_mut().left = self.sorted_array_to_bst_helper(nums, start, mid - 1);
-        node.borrow_mut().right = self.sorted_array_to_bst_helper(nums, mid + 1, end);
+        node.borrow_mut().left = Self::sorted_array_to_bst_helper(nums, start, mid - 1);
+        node.borrow_mut().right = Self::sorted_array_to_bst_helper(nums, mid + 1, end);
         Some(node)
     }
 }
@@ -46,8 +44,7 @@ mod tests {
     #[test]
     fn test1() {
         let nums = vec![-10, -3, 0, 5, 9];
-        let s = Solution;
-        let root = s.sorted_array_to_bst(nums);
+        let root = Solution::sorted_array_to_bst(nums);
         let result = bst_to_vec(root);
         assert_eq!(
             result,
@@ -58,8 +55,7 @@ mod tests {
     #[test]
     fn test2() {
         let nums = vec![1, 3];
-        let s = Solution;
-        let root = s.sorted_array_to_bst(nums);
+        let root = Solution::sorted_array_to_bst(nums);
         let result = bst_to_vec(root);
         assert_eq!(result, vec![Some(1), None, Some(3)]);
     }

@@ -43,16 +43,16 @@ impl Solution {
         let mut map2 = HashMap::new();
 
         for (cs, ct) in s.chars().zip(t.chars()) {
-            if let Some(&mapped) = map1.get(&cs) {
-                if mapped != ct {
-                    return false;
-                }
+            if let Some(&mapped) = map1.get(&cs)
+                && mapped != ct
+            {
+                return false;
             }
 
-            if let Some(&mapped) = map2.get(&ct) {
-                if mapped != cs {
-                    return false;
-                }
+            if let Some(&mapped) = map2.get(&ct)
+                && mapped != cs
+            {
+                return false;
             }
 
             map1.insert(cs, ct);

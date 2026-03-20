@@ -1,2 +1,2 @@
-mod inorder_traversal;
-mod tree_node;
+pub mod inorder_traversal;
+pub mod tree_node;

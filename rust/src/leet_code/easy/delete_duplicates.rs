@@ -9,8 +9,7 @@ use crate::leet_code::common::list_node::*;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn delete_duplicates(&self, head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         if head.is_none() {
             return head;
         }
@@ -36,7 +35,7 @@ impl Solution {
     }
 
     // Clean & Idiomatic Rust Version
-    pub fn delete_duplicates2(&self, head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn delete_duplicates2(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut head = head;
         let mut dummy = Box::new(ListNode::new(0));
         let mut tail = &mut dummy;
@@ -48,7 +47,7 @@ impl Solution {
             let val = node.val;
 
             // Add node only if not equal to previous value
-            if prev_val.map_or(true, |pv| pv != val) {
+            if prev_val != Some(val) {
                 prev_val = Some(val);
                 tail.next = Some(node);
                 tail = tail.next.as_mut().unwrap();
@@ -68,16 +67,14 @@ mod tests {
     #[test]
     fn test1() {
         let head = vec_to_list(vec![1, 1, 2]);
-        let s = Solution;
-        let result = s.delete_duplicates(head);
+        let result = Solution::delete_duplicates(head);
         assert_eq!(list_to_vec(result), vec![1, 2]);
     }
 
     #[test]
     fn test2() {
         let head = vec_to_list(vec![1, 1, 2, 3, 3]);
-        let s = Solution;
-        let result = s.delete_duplicates(head);
+        let result = Solution::delete_duplicates(head);
         assert_eq!(list_to_vec(result), vec![1, 2, 3]);
     }
 }

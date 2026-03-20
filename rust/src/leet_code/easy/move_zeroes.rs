@@ -7,17 +7,18 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(clippy::ptr_arg)]
     pub fn move_zeroes(nums: &mut Vec<i32>) {
         let mut cur = 0_usize;
         let mut tail = 0_usize;
         while cur < nums.len() {
-            if let Some(&num) = nums.get(cur) {
-                if num != 0 {
-                    // swap values
-                    nums[cur] = nums[tail];
-                    nums[tail] = num;
-                    tail += 1;
-                }
+            if let Some(&num) = nums.get(cur)
+                && num != 0
+            {
+                // swap values
+                nums[cur] = nums[tail];
+                nums[tail] = num;
+                tail += 1;
             }
             cur += 1;
         }

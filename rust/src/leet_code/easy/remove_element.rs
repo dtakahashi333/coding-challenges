@@ -7,9 +7,9 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
+    #[allow(clippy::ptr_arg)]
     pub fn remove_element(&self, nums: &mut Vec<i32>, val: i32) -> i32 {
-        let mut k = 0 as usize;
+        let mut k = 0_usize;
         for i in 0..nums.len() {
             if nums[i] != val {
                 nums[k] = nums[i];

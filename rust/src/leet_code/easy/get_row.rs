@@ -10,8 +10,7 @@ use num_traits::One;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn get_row(&self, row_index: i32) -> Vec<i32> {
+    pub fn get_row(row_index: i32) -> Vec<i32> {
         let row_index = row_index as u64;
         let mut row = Vec::new();
         for i in 0..=row_index {
@@ -23,7 +22,6 @@ impl Solution {
         row
     }
 
-    #[allow(dead_code)]
     fn perm(n: u64, k: u64) -> BigUint {
         let mut prod = BigUint::one();
         let mut n = n;
@@ -34,7 +32,6 @@ impl Solution {
         prod
     }
 
-    #[allow(dead_code)]
     fn comb(n: u64, k: u64) -> BigUint {
         // Solution::fact(n) / Solution::fact(k) / Solution::fact(n - k)
         Solution::perm(n, k) / Solution::perm(k, k)
@@ -52,18 +49,17 @@ impl Solution {
         prod
     }
 
-    #[allow(dead_code)]
-    pub fn get_row2(&self, row_index: i32) -> Vec<i32> {
+    pub fn get_row2(row_index: i32) -> Vec<i32> {
         let row_index = row_index as usize;
 
-        let mut row = vec![1; row_index + 1];
+        let mut rows = vec![1; row_index + 1];
         let mut val = 1_usize;
 
-        for i in 1..row_index {
+        for (i, row) in rows.iter_mut().enumerate().take(row_index).skip(1) {
             val = val * (row_index - (i - 1)) / i;
-            row[i] = val as i32;
+            *row = val as i32;
         }
-        row
+        rows
     }
 }
 
@@ -74,32 +70,28 @@ mod tests {
     #[test]
     fn test1() {
         let row_index = 3;
-        let s = Solution;
-        let result = s.get_row(row_index);
+        let result = Solution::get_row(row_index);
         assert_eq!(result, vec![1, 3, 3, 1]);
     }
 
     #[test]
     fn test2() {
         let row_index = 0;
-        let s = Solution;
-        let result = s.get_row(row_index);
+        let result = Solution::get_row(row_index);
         assert_eq!(result, vec![1]);
     }
 
     #[test]
     fn test3() {
         let row_index = 1;
-        let s = Solution;
-        let result = s.get_row(row_index);
+        let result = Solution::get_row(row_index);
         assert_eq!(result, vec![1, 1]);
     }
 
     #[test]
     fn test4() {
         let row_index = 13;
-        let s = Solution;
-        let result = s.get_row(row_index);
+        let result = Solution::get_row(row_index);
         assert_eq!(
             result,
             vec![
@@ -111,8 +103,7 @@ mod tests {
     #[test]
     fn test5() {
         let row_index = 21;
-        let s = Solution;
-        let result = s.get_row(row_index);
+        let result = Solution::get_row(row_index);
         assert_eq!(
             result,
             vec![
@@ -124,32 +115,28 @@ mod tests {
     #[test]
     fn test6() {
         let row_index = 3;
-        let s = Solution;
-        let result = s.get_row2(row_index);
+        let result = Solution::get_row2(row_index);
         assert_eq!(result, vec![1, 3, 3, 1]);
     }
 
     #[test]
     fn test7() {
         let row_index = 0;
-        let s = Solution;
-        let result = s.get_row2(row_index);
+        let result = Solution::get_row2(row_index);
         assert_eq!(result, vec![1]);
     }
 
     #[test]
     fn test8() {
         let row_index = 1;
-        let s = Solution;
-        let result = s.get_row2(row_index);
+        let result = Solution::get_row2(row_index);
         assert_eq!(result, vec![1, 1]);
     }
 
     #[test]
     fn test9() {
         let row_index = 13;
-        let s = Solution;
-        let result = s.get_row2(row_index);
+        let result = Solution::get_row2(row_index);
         assert_eq!(
             result,
             vec![
@@ -161,8 +148,7 @@ mod tests {
     #[test]
     fn test10() {
         let row_index = 21;
-        let s = Solution;
-        let result = s.get_row2(row_index);
+        let result = Solution::get_row2(row_index);
         assert_eq!(
             result,
             vec![

@@ -14,7 +14,7 @@ impl Solution {
             flags[num as usize] = true;
         }
 
-        flags.iter().position(|&x| x == false).unwrap() as i32
+        flags.iter().position(|&x| !x).unwrap() as i32
     }
 
     // Avoid extra memory (O(1) space) by ChatGPT

@@ -7,8 +7,8 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn remove_duplicates(&self, nums: &mut Vec<i32>) -> i32 {
+    #[allow(clippy::ptr_arg)]
+    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
         if nums.is_empty() {
             return 0;
         }
@@ -46,8 +46,7 @@ mod tests {
     #[test]
     fn test1() {
         let mut nums = vec![1, 1, 2];
-        let s = Solution;
-        let result = s.remove_duplicates(&mut nums);
+        let result = Solution::remove_duplicates(&mut nums);
         assert_eq!(result, 2);
         let expected = vec![1, 2];
         for i in 0..result as usize {
@@ -58,8 +57,7 @@ mod tests {
     #[test]
     fn test2() {
         let mut nums = vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
-        let s = Solution;
-        let result = s.remove_duplicates(&mut nums);
+        let result = Solution::remove_duplicates(&mut nums);
         assert_eq!(result, 5);
         let expected = vec![0, 1, 2, 3, 4];
         for i in 0..result as usize {

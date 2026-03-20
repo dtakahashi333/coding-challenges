@@ -15,6 +15,7 @@ pub struct MyQueue {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(clippy::new_without_default)]
 impl MyQueue {
     pub fn new() -> Self {
         MyQueue {
@@ -41,12 +42,12 @@ impl MyQueue {
             active = self.v1.borrow_mut();
             spare = self.v2.borrow_mut();
         }
-        while !active.is_empty() {
-            spare.push(active.pop().unwrap());
+        while let Some(element) = active.pop() {
+            spare.push(element);
         }
         let first = spare.pop().unwrap();
-        while !spare.is_empty() {
-            active.push(spare.pop().unwrap());
+        while let Some(element) = spare.pop() {
+            active.push(element);
         }
         first
     }
@@ -75,6 +76,7 @@ pub struct MyQueue2 {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(clippy::new_without_default)]
 impl MyQueue2 {
     pub fn new() -> Self {
         MyQueue2 {

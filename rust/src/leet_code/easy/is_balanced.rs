@@ -14,12 +14,12 @@ pub struct Solution;
 
 impl Solution {
     #[allow(dead_code)]
-    pub fn is_balanced(&self, root: Option<Rc<RefCell<TreeNode>>>) -> bool {
+    pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         let mut depth = 0;
-        return self.is_balanced_helper(&root, &mut depth);
+        Self::is_balanced_helper(&root, &mut depth)
     }
 
-    fn is_balanced_helper(&self, node: &Option<Rc<RefCell<TreeNode>>>, depth: &mut i32) -> bool {
+    fn is_balanced_helper(node: &Option<Rc<RefCell<TreeNode>>>, depth: &mut i32) -> bool {
         if node.is_none() {
             *depth = 0;
             return true;
@@ -29,8 +29,8 @@ impl Solution {
         let mut is_balanced = true;
         if let Some(n) = node {
             let n_ref = n.borrow();
-            is_balanced = self.is_balanced_helper(&n_ref.left, &mut left_depth)
-                && self.is_balanced_helper(&n_ref.right, &mut right_depth);
+            is_balanced = Self::is_balanced_helper(&n_ref.left, &mut left_depth)
+                && Self::is_balanced_helper(&n_ref.right, &mut right_depth);
         }
         *depth = cmp::max(left_depth, right_depth) + 1;
         is_balanced && (left_depth - right_depth).abs() <= 1
@@ -54,8 +54,7 @@ mod tests {
             Some(15),
             Some(7),
         ]);
-        let s = Solution;
-        let result = s.is_balanced(root);
+        let result = Solution::is_balanced(root);
         assert_eq!(result, true);
     }
 
@@ -72,16 +71,14 @@ mod tests {
             Some(4),
             Some(4),
         ]);
-        let s = Solution;
-        let result = s.is_balanced(root);
+        let result = Solution::is_balanced(root);
         assert_eq!(result, false);
     }
 
     #[test]
     fn test3() {
         let root = vec_to_bst(vec![]);
-        let s = Solution;
-        let result = s.is_balanced(root);
+        let result = Solution::is_balanced(root);
         assert_eq!(result, true);
     }
 }

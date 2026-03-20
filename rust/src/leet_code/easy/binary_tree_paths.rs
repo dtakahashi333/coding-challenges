@@ -17,7 +17,7 @@ impl Solution {
         if root.is_some() {
             Self::binary_tree_paths_helper(&root, String::new(), &mut res);
         }
-        return res;
+        res
     }
 
     fn binary_tree_paths_helper(

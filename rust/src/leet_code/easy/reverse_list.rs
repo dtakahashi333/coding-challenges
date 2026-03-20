@@ -11,9 +11,10 @@ pub struct Solution;
 impl Solution {
     #[allow(dead_code)]
     pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-        if head.is_none() {
-            return None;
-        }
+        // if head.is_none() {
+        //     return None;
+        // }
+        head.as_ref()?;
 
         let mut head = head;
         let mut cur = head.take().unwrap();

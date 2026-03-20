@@ -14,6 +14,7 @@ pub struct MyStack {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(clippy::new_without_default)]
 impl MyStack {
     pub fn new() -> Self {
         MyStack {
@@ -69,6 +70,7 @@ pub struct MyStack2 {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(clippy::new_without_default)]
 impl MyStack2 {
     pub fn new() -> Self {
         MyStack2 { q: VecDeque::new() }

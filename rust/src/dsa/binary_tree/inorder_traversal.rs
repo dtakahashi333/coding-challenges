@@ -6,30 +6,27 @@ use super::tree_node;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn inorder_traversal_recursive(&self, root: &Option<&tree_node::TreeNode>) -> Vec<i32> {
+    pub fn inorder_traversal_recursive(root: &Option<&tree_node::TreeNode>) -> Vec<i32> {
         let mut result: Vec<i32> = Vec::new();
-        self.inorder_traversal_recursive_helper(root, &mut result);
+        Self::inorder_traversal_recursive_helper(root, &mut result);
         result
     }
 
     fn inorder_traversal_recursive_helper(
-        &self,
         node: &Option<&tree_node::TreeNode>,
         result: &mut Vec<i32>,
     ) {
         if let Some(n) = node {
             // left
-            self.inorder_traversal_recursive_helper(&n.left.as_deref(), result);
+            Self::inorder_traversal_recursive_helper(&n.left.as_deref(), result);
             // current value;
             result.push(n.value);
             // right
-            self.inorder_traversal_recursive_helper(&n.right.as_deref(), result);
+            Self::inorder_traversal_recursive_helper(&n.right.as_deref(), result);
         }
     }
 
-    #[allow(dead_code)]
-    pub fn inorder_traversal(&self, root: &Option<&tree_node::TreeNode>) -> Vec<i32> {
+    pub fn inorder_traversal(root: &Option<&tree_node::TreeNode>) -> Vec<i32> {
         let mut result = Vec::new();
         let mut stack = Vec::new();
 
@@ -64,8 +61,7 @@ mod tests {
     fn test1() {
         let list = vec![Some(1), None, Some(2), Some(3)];
         let tree = tree_node::build_binary_tree(&list);
-        let s = Solution;
-        let result = s.inorder_traversal_recursive(&tree.as_ref());
+        let result = Solution::inorder_traversal_recursive(&tree.as_ref());
         assert_eq!(result, vec![1, 3, 2]);
     }
 
@@ -73,8 +69,7 @@ mod tests {
     fn test2() {
         let list = vec![Some(1), None, Some(2), Some(3)];
         let tree = tree_node::build_binary_tree(&list);
-        let s = Solution;
-        let result = s.inorder_traversal(&tree.as_ref());
+        let result = Solution::inorder_traversal(&tree.as_ref());
         assert_eq!(result, vec![1, 3, 2]);
     }
 }

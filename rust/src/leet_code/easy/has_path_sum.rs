@@ -12,8 +12,7 @@ use std::rc::Rc;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn has_path_sum(&self, root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32) -> bool {
+    pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32) -> bool {
         let mut stack: Vec<(Rc<RefCell<TreeNode>>, i32)> = Vec::new();
 
         // while node.is_some() || !stack.is_empty() {
@@ -50,10 +49,8 @@ impl Solution {
             while !stack.is_empty() {
                 if let Some((n, sum)) = stack.pop() {
                     let n_ref = n.borrow();
-                    if n_ref.left.is_none() && n_ref.right.is_none() {
-                        if sum == target_sum {
-                            return true;
-                        }
+                    if n_ref.left.is_none() && n_ref.right.is_none() && sum == target_sum {
+                        return true;
                     }
                     if let Some(left) = &n_ref.left {
                         let cumulative_sum = left.borrow().val + sum;
@@ -94,8 +91,7 @@ mod tests {
             Some(1),
         ]);
         let target_sum = 22;
-        let s = Solution;
-        let result = s.has_path_sum(root, target_sum);
+        let result = Solution::has_path_sum(root, target_sum);
         assert_eq!(result, true);
     }
 
@@ -103,8 +99,7 @@ mod tests {
     fn test2() {
         let root = vec_to_bst(vec![Some(1), Some(2), Some(3)]);
         let target_sum = 5;
-        let s = Solution;
-        let result = s.has_path_sum(root, target_sum);
+        let result = Solution::has_path_sum(root, target_sum);
         assert_eq!(result, false);
     }
 
@@ -112,8 +107,7 @@ mod tests {
     fn test3() {
         let root = vec_to_bst(vec![]);
         let target_sum = 0;
-        let s = Solution;
-        let result = s.has_path_sum(root, target_sum);
+        let result = Solution::has_path_sum(root, target_sum);
         assert_eq!(result, false);
     }
 
@@ -121,8 +115,7 @@ mod tests {
     fn test4() {
         let root = vec_to_bst(vec![Some(1), Some(2)]);
         let target_sum = 1;
-        let s = Solution;
-        let result = s.has_path_sum(root, target_sum);
+        let result = Solution::has_path_sum(root, target_sum);
         assert_eq!(result, false);
     }
 
@@ -139,8 +132,7 @@ mod tests {
             Some(-1),
         ]);
         let target_sum = 3;
-        let s = Solution;
-        let result = s.has_path_sum(root, target_sum);
+        let result = Solution::has_path_sum(root, target_sum);
         assert_eq!(result, false);
     }
 
@@ -157,8 +149,7 @@ mod tests {
             Some(-1),
         ]);
         let target_sum = -4;
-        let s = Solution;
-        let result = s.has_path_sum(root, target_sum);
+        let result = Solution::has_path_sum(root, target_sum);
         assert_eq!(result, true);
     }
 }

@@ -14,7 +14,7 @@ struct Solution;
 
 impl Solution {
     #[allow(dead_code)]
-    pub fn min_depth(&self, root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         let node = root;
         // if let Some(n) = node {
         //     let n_ref = n.borrow();
@@ -39,12 +39,12 @@ impl Solution {
                 let n_ref = n.borrow();
                 match (&n_ref.left, &n_ref.right) {
                     (None, None) => 1,
-                    (Some(l), None) => self.min_depth(Some(Rc::clone(l))) + 1,
-                    (None, Some(r)) => self.min_depth(Some(Rc::clone(r))) + 1,
+                    (Some(l), None) => Self::min_depth(Some(Rc::clone(l))) + 1,
+                    (None, Some(r)) => Self::min_depth(Some(Rc::clone(r))) + 1,
                     (Some(l), Some(r)) => {
                         cmp::min(
-                            self.min_depth(Some(Rc::clone(l))),
-                            self.min_depth(Some(Rc::clone(r))),
+                            Self::min_depth(Some(Rc::clone(l))),
+                            Self::min_depth(Some(Rc::clone(r))),
                         ) + 1
                     }
                 }
@@ -53,7 +53,7 @@ impl Solution {
     }
 
     #[allow(dead_code)]
-    pub fn min_depth2(&self, root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    pub fn min_depth2(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         use std::collections::VecDeque;
 
         if let Some(node) = root {
@@ -93,8 +93,7 @@ mod tests {
             Some(15),
             Some(7),
         ]);
-        let s = Solution;
-        let result = s.min_depth(root);
+        let result = Solution::min_depth(root);
         assert_eq!(result, 2);
     }
 
@@ -111,8 +110,7 @@ mod tests {
             None,
             Some(6),
         ]);
-        let s = Solution;
-        let result = s.min_depth(root);
+        let result = Solution::min_depth(root);
         assert_eq!(result, 5);
     }
 
@@ -127,8 +125,7 @@ mod tests {
             Some(15),
             Some(7),
         ]);
-        let s = Solution;
-        let result = s.min_depth2(root);
+        let result = Solution::min_depth2(root);
         assert_eq!(result, 2);
     }
 
@@ -145,8 +142,7 @@ mod tests {
             None,
             Some(6),
         ]);
-        let s = Solution;
-        let result = s.min_depth2(root);
+        let result = Solution::min_depth2(root);
         assert_eq!(result, 5);
     }
 }

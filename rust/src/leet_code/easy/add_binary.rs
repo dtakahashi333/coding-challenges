@@ -9,8 +9,7 @@ use std::cmp;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn add_binary(&self, a: String, b: String) -> String {
+    pub fn add_binary(a: String, b: String) -> String {
         let a: Vec<char> = a.chars().collect();
         let b: Vec<char> = b.chars().collect();
 
@@ -55,8 +54,7 @@ mod tests {
     fn test1() {
         let a = "11".to_string();
         let b = "1".to_string();
-        let s = Solution;
-        let result = s.add_binary(a, b);
+        let result = Solution::add_binary(a, b);
         assert_eq!(result, "100");
     }
 
@@ -64,8 +62,7 @@ mod tests {
     fn test2() {
         let a = "1010".to_string();
         let b = "1011".to_string();
-        let s = Solution;
-        let result = s.add_binary(a, b);
+        let result = Solution::add_binary(a, b);
         assert_eq!(result, "10101");
     }
 }
