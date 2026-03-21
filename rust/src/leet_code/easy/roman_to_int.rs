@@ -7,8 +7,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn roman_to_int(&self, s: String) -> i32 {
+    pub fn roman_to_int(s: String) -> i32 {
         let chars: Vec<char> = s.chars().collect();
         let string_length = chars.len();
         let mut result: i32 = 0;
@@ -85,24 +84,21 @@ mod tests {
     #[test]
     fn test1() {
         let roman = String::from("III");
-        let s = Solution;
-        let result = s.roman_to_int(roman);
+        let result = Solution::roman_to_int(roman);
         assert_eq!(result, 3);
     }
 
     #[test]
     fn test2() {
         let roman = String::from("LVIII");
-        let s = Solution;
-        let result = s.roman_to_int(roman);
+        let result = Solution::roman_to_int(roman);
         assert_eq!(result, 58);
     }
 
     #[test]
     fn test3() {
         let roman = String::from("MCMXCIV");
-        let s = Solution;
-        let result = s.roman_to_int(roman);
+        let result = Solution::roman_to_int(roman);
         assert_eq!(result, 1994);
     }
 }

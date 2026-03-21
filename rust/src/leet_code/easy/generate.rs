@@ -7,7 +7,6 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn generate(num_rows: i32) -> Vec<Vec<i32>> {
         match num_rows {
             0 => vec![],

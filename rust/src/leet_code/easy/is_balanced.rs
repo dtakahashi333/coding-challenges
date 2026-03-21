@@ -13,7 +13,6 @@ use std::rc::Rc;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         let mut depth = 0;
         Self::is_balanced_helper(&root, &mut depth)

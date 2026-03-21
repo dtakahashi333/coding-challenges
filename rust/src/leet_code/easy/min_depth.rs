@@ -10,10 +10,9 @@ use std::cmp;
 use std::rc::Rc;
 
 #[derive(Debug)]
-struct Solution;
+pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         let node = root;
         // if let Some(n) = node {
@@ -52,7 +51,6 @@ impl Solution {
         }
     }
 
-    #[allow(dead_code)]
     pub fn min_depth2(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         use std::collections::VecDeque;
 

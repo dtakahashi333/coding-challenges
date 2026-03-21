@@ -32,7 +32,6 @@ impl Solution {
         false
     }
 
-    #[allow(dead_code)]
     pub fn contains_nearby_duplicate2(nums: Vec<i32>, k: i32) -> bool {
         use std::collections::HashSet;
 

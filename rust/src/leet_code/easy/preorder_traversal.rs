@@ -58,7 +58,6 @@ impl Solution {
         result
     }
 
-    #[allow(dead_code)]
     pub fn preorder_traversal2(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
         if root.is_none() {

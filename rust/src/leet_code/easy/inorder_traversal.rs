@@ -29,7 +29,6 @@ impl Solution {
         }
     }
 
-    #[allow(dead_code)]
     pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
 

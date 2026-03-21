@@ -12,7 +12,6 @@ use std::rc::Rc;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         if root.is_none() {
             return true;

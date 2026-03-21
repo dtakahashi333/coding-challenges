@@ -7,8 +7,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn length_of_last_word(&self, s: String) -> i32 {
+    pub fn length_of_last_word(s: String) -> i32 {
         // let words: Vec<char> = s.chars().collect();
         // let words_len = words.len();
         // let mut count = 0;
@@ -38,24 +37,21 @@ mod tests {
     #[test]
     fn test1() {
         let words_str = "Hello World".to_string();
-        let s = Solution;
-        let result = s.length_of_last_word(words_str);
+        let result = Solution::length_of_last_word(words_str);
         assert_eq!(result, 5);
     }
 
     #[test]
     fn test2() {
         let words_str = "   fly me   to   the moon  ".to_string();
-        let s = Solution;
-        let result = s.length_of_last_word(words_str);
+        let result = Solution::length_of_last_word(words_str);
         assert_eq!(result, 4);
     }
 
     #[test]
     fn test3() {
         let words_str = "luffy is still joyboy".to_string();
-        let s = Solution;
-        let result = s.length_of_last_word(words_str);
+        let result = Solution::length_of_last_word(words_str);
         assert_eq!(result, 6);
     }
 }

@@ -7,8 +7,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn single_number(&self, nums: Vec<i32>) -> i32 {
+    pub fn single_number(nums: Vec<i32>) -> i32 {
         use std::collections::HashMap;
 
         let mut map = HashMap::new();
@@ -36,7 +35,7 @@ impl Solution {
         // unreachable!();
     }
 
-    pub fn single_number2(&self, nums: Vec<i32>) -> i32 {
+    pub fn single_number2(nums: Vec<i32>) -> i32 {
         let mut accumulated_value = 0;
         for num in nums {
             accumulated_value ^= num;
@@ -52,48 +51,42 @@ mod tests {
     #[test]
     fn test1() {
         let nums = vec![2, 2, 1];
-        let s = Solution;
-        let result = s.single_number(nums);
+        let result = Solution::single_number(nums);
         assert_eq!(result, 1);
     }
 
     #[test]
     fn test2() {
         let nums = vec![4, 1, 2, 1, 2];
-        let s = Solution;
-        let result = s.single_number(nums);
+        let result = Solution::single_number(nums);
         assert_eq!(result, 4);
     }
 
     #[test]
     fn test3() {
         let nums = vec![1];
-        let s = Solution;
-        let result = s.single_number(nums);
+        let result = Solution::single_number(nums);
         assert_eq!(result, 1);
     }
 
     #[test]
     fn test4() {
         let nums = vec![2, 2, 1];
-        let s = Solution;
-        let result = s.single_number2(nums);
+        let result = Solution::single_number2(nums);
         assert_eq!(result, 1);
     }
 
     #[test]
     fn test5() {
         let nums = vec![4, 1, 2, 1, 2];
-        let s = Solution;
-        let result = s.single_number2(nums);
+        let result = Solution::single_number2(nums);
         assert_eq!(result, 4);
     }
 
     #[test]
     fn test6() {
         let nums = vec![1];
-        let s = Solution;
-        let result = s.single_number2(nums);
+        let result = Solution::single_number2(nums);
         assert_eq!(result, 1);
     }
 }

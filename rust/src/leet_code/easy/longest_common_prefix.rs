@@ -7,8 +7,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn longest_common_prefix(&self, strs: Vec<String>) -> String {
+    pub fn longest_common_prefix(strs: Vec<String>) -> String {
         if strs.is_empty() {
             return String::new();
         }
@@ -44,8 +43,7 @@ mod tests {
             String::from("flow"),
             String::from("flight"),
         ];
-        let s = Solution;
-        let result = s.longest_common_prefix(strs);
+        let result = Solution::longest_common_prefix(strs);
         assert_eq!(result, String::from("fl"));
     }
 
@@ -56,8 +54,7 @@ mod tests {
             String::from("racecar"),
             String::from("car"),
         ];
-        let s = Solution;
-        let result = s.longest_common_prefix(strs);
+        let result = Solution::longest_common_prefix(strs);
         assert_eq!(result, String::from(""));
     }
 }

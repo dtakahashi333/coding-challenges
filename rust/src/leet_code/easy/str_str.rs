@@ -7,8 +7,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn str_str(&self, haystack: String, needle: String) -> i32 {
+    pub fn str_str(haystack: String, needle: String) -> i32 {
         if needle.is_empty() {
             return 0;
         }
@@ -56,8 +55,7 @@ mod tests {
     fn test1() {
         let haystack = "sadbutsad".to_string();
         let needle = "sad".to_string();
-        let s = Solution;
-        let result = s.str_str(haystack, needle);
+        let result = Solution::str_str(haystack, needle);
         assert_eq!(result, 0);
     }
 
@@ -65,8 +63,7 @@ mod tests {
     fn test2() {
         let haystack = "leetcode".to_string();
         let needle = "leeto".to_string();
-        let s = Solution;
-        let result = s.str_str(haystack, needle);
+        let result = Solution::str_str(haystack, needle);
         assert_eq!(result, -1);
     }
 
@@ -74,8 +71,7 @@ mod tests {
     fn test3() {
         let haystack = "aaa".to_string();
         let needle = "aaaa".to_string();
-        let s = Solution;
-        let result = s.str_str(haystack, needle);
+        let result = Solution::str_str(haystack, needle);
         assert_eq!(result, -1);
     }
 }

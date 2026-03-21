@@ -7,8 +7,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn plus_one(&self, digits: Vec<i32>) -> Vec<i32> {
+    pub fn plus_one(digits: Vec<i32>) -> Vec<i32> {
         let mut digits = digits;
         let mut carry = 1;
         for d in digits.iter_mut().rev() {
@@ -30,8 +29,7 @@ mod tests {
     #[test]
     fn test1() {
         let digits = vec![1, 2, 3];
-        let s = Solution;
-        let result = s.plus_one(digits);
+        let result = Solution::plus_one(digits);
         let expected = vec![1, 2, 4];
         assert_eq!(result, expected);
     }
@@ -39,8 +37,7 @@ mod tests {
     #[test]
     fn test2() {
         let digits = vec![4, 3, 2, 1];
-        let s = Solution;
-        let result = s.plus_one(digits);
+        let result = Solution::plus_one(digits);
         let expected = vec![4, 3, 2, 2];
         assert_eq!(result, expected);
     }
@@ -48,8 +45,7 @@ mod tests {
     #[test]
     fn test3() {
         let digits = vec![9];
-        let s = Solution;
-        let result = s.plus_one(digits);
+        let result = Solution::plus_one(digits);
         let expected = vec![1, 0];
         assert_eq!(result, expected);
     }

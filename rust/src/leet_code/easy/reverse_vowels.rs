@@ -31,8 +31,8 @@ impl Solution {
         chars.into_iter().collect()
     }
 
-    #[allow(dead_code)]
     // Regex compilation is expensive. Potentially 2× per loop iteration.
+    #[allow(dead_code)]
     fn is_vowel(ch: char) -> bool {
         let pattern = r"(?i)[aeiou]";
 

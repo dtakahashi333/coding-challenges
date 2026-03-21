@@ -7,8 +7,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn search_insert(&self, nums: Vec<i32>, target: i32) -> i32 {
+    pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
         if nums.is_empty() {
             return 0;
         }
@@ -34,8 +33,7 @@ mod tests {
     fn test1() {
         let nums = vec![1, 2, 5, 6];
         let target = 5;
-        let s = Solution;
-        let result = s.search_insert(nums, target);
+        let result = Solution::search_insert(nums, target);
         assert_eq!(result, 2);
     }
 
@@ -43,8 +41,7 @@ mod tests {
     fn test2() {
         let nums = vec![1, 3, 5, 6];
         let target = 2;
-        let s = Solution;
-        let result = s.search_insert(nums, target);
+        let result = Solution::search_insert(nums, target);
         assert_eq!(result, 1);
     }
 
@@ -52,8 +49,7 @@ mod tests {
     fn test3() {
         let nums = vec![1, 3, 5, 6];
         let target = 7;
-        let s = Solution;
-        let result = s.search_insert(nums, target);
+        let result = Solution::search_insert(nums, target);
         assert_eq!(result, 4);
     }
 
@@ -61,8 +57,7 @@ mod tests {
     fn test4() {
         let nums = vec![1, 3];
         let target = 0;
-        let s = Solution;
-        let result = s.search_insert(nums, target);
+        let result = Solution::search_insert(nums, target);
         assert_eq!(result, 0);
     }
 }

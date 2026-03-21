@@ -12,9 +12,7 @@ use std::rc::Rc;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn is_same_tree(
-        &self,
         p: Option<Rc<RefCell<TreeNode>>>,
         q: Option<Rc<RefCell<TreeNode>>>,
     ) -> bool {
@@ -66,8 +64,7 @@ mod tests {
     fn test1() {
         let p = vec_to_bst(vec![Some(1), Some(2), Some(2)]);
         let q = vec_to_bst(vec![Some(1), Some(2), Some(2)]);
-        let s = Solution;
-        let result = s.is_same_tree(p, q);
+        let result = Solution::is_same_tree(p, q);
         assert!(result);
     }
 
@@ -75,8 +72,7 @@ mod tests {
     fn test2() {
         let p = vec_to_bst(vec![Some(1), Some(2)]);
         let q = vec_to_bst(vec![Some(1), None, Some(2)]);
-        let s = Solution;
-        let result = s.is_same_tree(p, q);
+        let result = Solution::is_same_tree(p, q);
         assert!(!result);
     }
 
@@ -84,8 +80,7 @@ mod tests {
     fn test3() {
         let p = vec_to_bst(vec![Some(1), Some(2), Some(1)]);
         let q = vec_to_bst(vec![Some(1), Some(1), Some(2)]);
-        let s = Solution;
-        let result = s.is_same_tree(p, q);
+        let result = Solution::is_same_tree(p, q);
         assert!(!result);
     }
 
@@ -93,8 +88,7 @@ mod tests {
     fn test4() {
         let p = vec_to_bst(vec![]);
         let q = vec_to_bst(vec![Some(0)]);
-        let s = Solution;
-        let result = s.is_same_tree(p, q);
+        let result = Solution::is_same_tree(p, q);
         assert!(!result);
     }
 
@@ -102,8 +96,7 @@ mod tests {
     fn test5() {
         let p = vec_to_bst(vec![Some(1)]);
         let q = vec_to_bst(vec![Some(1), None, Some(2)]);
-        let s = Solution;
-        let result = s.is_same_tree(p, q);
+        let result = Solution::is_same_tree(p, q);
         assert!(!result);
     }
 }

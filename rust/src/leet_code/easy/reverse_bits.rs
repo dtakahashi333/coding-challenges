@@ -7,7 +7,6 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn reverse_bits(n: i32) -> i32 {
         let mut n = n;
         let mut bits = Vec::new();
@@ -18,7 +17,6 @@ impl Solution {
         bits.iter().fold(0, |acc, &d| acc * 2 + d)
     }
 
-    #[allow(dead_code)]
     pub fn reverse_bits2(n: i32) -> i32 {
         let mut n = n;
         let mut bits = Vec::new();

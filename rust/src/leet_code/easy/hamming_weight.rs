@@ -7,7 +7,6 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn hamming_weight(n: i32) -> i32 {
         let mut n = n;
         let mut weight = 0;

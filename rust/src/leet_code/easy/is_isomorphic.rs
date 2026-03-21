@@ -9,7 +9,6 @@ use std::collections::HashMap;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn is_isomorphic(s: String, t: String) -> bool {
         let s: Vec<char> = s.chars().collect();
         let t: Vec<char> = t.chars().collect();

@@ -9,7 +9,6 @@ use crate::leet_code::common::list_node::ListNode;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         // if head.is_none() {
         //     return None;

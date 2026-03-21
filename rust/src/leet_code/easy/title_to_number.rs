@@ -7,7 +7,6 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn title_to_number(column_title: String) -> i32 {
         let mut sum = 0;
         for (_, c) in column_title.char_indices() {

@@ -7,8 +7,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn is_palindrome(&self, s: String) -> bool {
+    pub fn is_palindrome(s: String) -> bool {
         if s.is_empty() {
             return true;
         }
@@ -40,24 +39,21 @@ mod tests {
     #[test]
     fn test1() {
         let phrase = String::from("A man, a plan, a canal: Panama");
-        let s = Solution;
-        let result = s.is_palindrome(phrase);
+        let result = Solution::is_palindrome(phrase);
         assert!(result);
     }
 
     #[test]
     fn test2() {
         let phrase = String::from("race a car");
-        let s = Solution;
-        let result = s.is_palindrome(phrase);
+        let result = Solution::is_palindrome(phrase);
         assert!(!result);
     }
 
     #[test]
     fn test3() {
         let phrase = String::from(" ");
-        let s = Solution;
-        let result = s.is_palindrome(phrase);
+        let result = Solution::is_palindrome(phrase);
         assert!(result);
     }
 }

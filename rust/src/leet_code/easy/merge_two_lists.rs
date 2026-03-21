@@ -9,9 +9,7 @@ use crate::leet_code::common::list_node::ListNode;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
     pub fn merge_two_lists(
-        &self,
         list1: Option<Box<ListNode>>,
         list2: Option<Box<ListNode>>,
     ) -> Option<Box<ListNode>> {
@@ -71,8 +69,7 @@ mod tests {
     fn test1() {
         let list1 = vec_to_list(vec![1, 2, 4]);
         let list2 = vec_to_list(vec![1, 3, 4]);
-        let s = Solution;
-        let merged = s.merge_two_lists(list1, list2);
+        let merged = Solution::merge_two_lists(list1, list2);
         assert_eq!(list_to_vec(merged), vec![1, 1, 2, 3, 4, 4]);
     }
 
@@ -80,8 +77,7 @@ mod tests {
     fn test2() {
         let list1 = vec_to_list(vec![]);
         let list2 = vec_to_list(vec![]);
-        let s = Solution;
-        let merged = s.merge_two_lists(list1, list2);
+        let merged = Solution::merge_two_lists(list1, list2);
         assert_eq!(list_to_vec(merged), vec![]);
     }
 
@@ -89,8 +85,7 @@ mod tests {
     fn test3() {
         let list1 = vec_to_list(vec![]);
         let list2 = vec_to_list(vec![0]);
-        let s = Solution;
-        let merged = s.merge_two_lists(list1, list2);
+        let merged = Solution::merge_two_lists(list1, list2);
         assert_eq!(list_to_vec(merged), vec![0]);
     }
 }

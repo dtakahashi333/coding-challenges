@@ -12,8 +12,7 @@ use std::rc::Rc;
 pub struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
-    pub fn max_depth(&self, root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         use std::collections::VecDeque;
 
         if root.is_none() {
@@ -60,16 +59,14 @@ mod test {
             Some(15),
             Some(7),
         ]);
-        let s = Solution;
-        let result = s.max_depth(root);
+        let result = Solution::max_depth(root);
         assert_eq!(result, 3);
     }
 
     #[test]
     fn test2() {
         let root = vec_to_bst(vec![Some(1), None, Some(2)]);
-        let s = Solution;
-        let result = s.max_depth(root);
+        let result = Solution::max_depth(root);
         assert_eq!(result, 2);
     }
 }
