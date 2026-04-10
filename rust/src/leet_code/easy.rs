@@ -24,6 +24,7 @@ pub mod is_happy;
 pub mod is_isomorphic;
 pub mod is_palindrome;
 pub mod is_palindrome_linked_list;
+pub mod is_perfect_square;
 pub mod is_power_of_four;
 pub mod is_power_of_three;
 pub mod is_power_of_two;
