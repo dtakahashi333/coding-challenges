@@ -12,7 +12,7 @@ impl Solution {
         for i in 2..=upper_bound {
             let mut count = 0;
             while num % i == 0 {
-                num = num / i;
+                num /= i;
                 count += 1;
             }
             if count % 2 != 0 {
