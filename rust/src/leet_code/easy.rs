@@ -16,6 +16,8 @@ pub mod hamming_weight;
 pub mod has_path_sum;
 pub mod inorder_traversal;
 // pub mod intersect;
+pub mod can_construct;
+pub mod guess_number;
 pub mod intersection;
 pub mod invert_tree;
 pub mod is_anagram;
