@@ -18,12 +18,10 @@ impl Solution {
                     let row = &triangle[i];
                     let new_row_size = row.len() + 1;
                     let mut new_row = vec![1; new_row_size];
-                    let mut k = 1;
-                    for j in 0..row.len() / 2 {
+                    for (k, j) in (1..).zip(0..row.len() / 2) {
                         let sum = row[j] + row[j + 1];
                         new_row[k] = sum;
                         new_row[new_row_size - 1 - k] = sum;
-                        k += 1;
                     }
                     triangle.push(new_row);
                 }

@@ -19,14 +19,12 @@ impl Solution {
 
         for (i, c1) in haystack_chars.iter().enumerate() {
             if *c1 == needle_chars[0] {
-                let mut ii = i;
                 let mut count = 0;
-                for c2 in needle_chars.iter() {
+                for (ii, c2) in (i..).zip(needle_chars.iter()) {
                     if ii >= haystack_len || *c2 != haystack_chars[ii] {
                         break;
                     }
                     count += 1;
-                    ii += 1;
                 }
                 if count == needle_len {
                     return i as i32;
