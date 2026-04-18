@@ -17,6 +17,7 @@ pub mod has_path_sum;
 pub mod inorder_traversal;
 // pub mod intersect;
 pub mod can_construct;
+pub mod find_the_difference;
 pub mod first_uniq_char;
 pub mod guess_number;
 pub mod intersection;
