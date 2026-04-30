@@ -10,7 +10,7 @@ impl Solution {
         if s.is_empty() {
             return true;
         }
-        
+
         let mut s_iter = s.bytes();
         let mut current_target = s_iter.next();
 
