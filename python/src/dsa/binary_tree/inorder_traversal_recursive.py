@@ -8,7 +8,6 @@ from dsa.binary_tree.tree_node import TreeNode
 
 
 class Solution:
-
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         result = []
         self.inorderTraversalHelper(root, result)

@@ -5,27 +5,26 @@
 
 from typing import List, Optional
 from dsa.binary_tree.tree_node import TreeNode
+from collections import deque
 
 
 class Solution:
-
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        result = []
         if root is None:
-            return result
+            return []
 
-        current = root
-        stack = []
+        res = []
+        st = deque()
+        st.append(root)
 
-        while current is not None or len(stack) > 0:
-            while current is not None:
-                result.append(current.val)
-                stack.append(current)
-                current = current.left
+        while st:
+            curr = st.pop()
+            res.append(curr.val)
 
-            # current is None.
-            current = stack.pop()
+            # push right first (so left is processed first)
+            if curr.right:
+                st.append(curr.right)
+            if curr.left:
+                st.append(curr.left)
 
-            current = current.right
-
-        return result
+        return res

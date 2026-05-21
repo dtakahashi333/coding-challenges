@@ -1,3 +1,8 @@
+#!/bin/env python3
+
+# python/src/dsa/binary_tree/tree_node.py
+
+from collections import deque
 from typing import List, Optional
 
 
@@ -9,7 +14,7 @@ class TreeNode:
         self.right = right
 
 
-def build_binary_tree(items: List[int]) -> Optional[TreeNode]:
+def build_binary_tree(items: List[Optional[int]]) -> Optional[TreeNode]:
     """
     Returns a binary tree from given a list of integers.
 
@@ -23,11 +28,11 @@ def build_binary_tree(items: List[int]) -> Optional[TreeNode]:
         return None
 
     root = TreeNode(items[0])
-    queue = [root]
+    queue = deque([root])
     i = 1
 
     while i < len(items) and len(queue) > 0:
-        node = queue.pop(0)
+        node = queue.popleft()
         if items[i] is not None:
             left = TreeNode(items[i])
             node.left = left

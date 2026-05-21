@@ -63,3 +63,10 @@ class TestInorderTraversal(TestCase):
         traversal = s2.preorderTraversal(root)
         # Assertion
         self.assertListEqual(traversal, [1])
+
+    def test_preorder_traversal5(self):
+        root = build_binary_tree([1, 2, 3])
+        s2 = S2()
+        traversal = s2.preorderTraversal(root)
+        # Assertion
+        self.assertListEqual(traversal, [1, 2, 3])
