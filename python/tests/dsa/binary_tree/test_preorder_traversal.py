@@ -6,7 +6,7 @@ from dsa.binary_tree.preorder_traversal_recursive import Solution as S1
 from dsa.binary_tree.preorder_traversal import Solution as S2
 
 
-class TestInorderTraversal(TestCase):
+class TestPreorderTraversal(TestCase):
 
     def test_preorder_traversal_recursive1(self):
         root = build_binary_tree([1, None, 2, 3])
