@@ -6,6 +6,7 @@
 use crate::leet_code::common::tree_node::TreeNode;
 
 use std::cell::RefCell;
+use std::collections::VecDeque;
 use std::rc::Rc;
 
 #[derive(Debug)]
@@ -31,26 +32,29 @@ impl Solution {
     }
 
     pub fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-        let mut result = Vec::new();
         if root.is_none() {
-            return result;
+            return vec![];
         }
-        let mut stack = Vec::new();
-        stack.push(root.as_ref().cloned().unwrap());
-        while !stack.is_empty() {
-            if let Some(n) = stack.pop() {
-                let n_ref = n.borrow();
-                result.push(n_ref.val);
-                if let Some(left) = &n_ref.left {
-                    stack.push(Rc::clone(left));
-                }
-                if let Some(right) = &n_ref.right {
-                    stack.push(Rc::clone(right));
-                }
+
+        let mut res = Vec::<i32>::new();
+        let mut deque = VecDeque::new();
+        let mut cur = root;
+
+        while cur.is_some() || !deque.is_empty() {
+            while let Some(node) = cur {
+                res.push(node.borrow().val);
+                cur = node.borrow().right.clone();
+                deque.push_back(node);
+            }
+
+            if let Some(node) = deque.pop_back() {
+                cur = node.borrow().left.clone();
             }
         }
-        result.reverse();
-        result
+
+        res.reverse();
+
+        res
     }
 
     pub fn postorder_traversal2(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
