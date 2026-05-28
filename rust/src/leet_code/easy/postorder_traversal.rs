@@ -3,7 +3,7 @@
 // 145. Binary Tree Postorder Traversal
 // https://leetcode.com/problems/binary-tree-postorder-traversal/description/
 
-use crate::leet_code::common::tree_node::TreeNode;
+use crate::common::tree_node::TreeNode;
 
 use std::cell::RefCell;
 use std::collections::VecDeque;
@@ -85,7 +85,7 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::leet_code::common::tree_node::vec_to_bst;
+    use crate::common::tree_node::vec_to_bst;
 
     use super::*;
 

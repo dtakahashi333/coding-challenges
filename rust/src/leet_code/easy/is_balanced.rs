@@ -3,7 +3,7 @@
 // 110. Balanced Binary Tree
 // https://leetcode.com/problems/balanced-binary-tree/description/
 
-use crate::leet_code::common::tree_node::TreeNode;
+use crate::common::tree_node::TreeNode;
 
 use std::cell::RefCell;
 use std::cmp;
@@ -40,7 +40,7 @@ impl Solution {
 mod tests {
     use super::*;
 
-    use crate::leet_code::common::tree_node::vec_to_bst;
+    use crate::common::tree_node::vec_to_bst;
 
     #[test]
     fn test1() {

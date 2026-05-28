@@ -3,7 +3,7 @@
 // 83. Remove Duplicates from Sorted List
 // https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
 
-use crate::leet_code::common::list_node::*;
+use crate::common::list_node::*;
 
 #[derive(Debug)]
 pub struct Solution;
@@ -60,7 +60,7 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::leet_code::common::list_node::{list_to_vec, vec_to_list};
+    use crate::common::list_node::{list_to_vec, vec_to_list};
 
     use super::*;
 

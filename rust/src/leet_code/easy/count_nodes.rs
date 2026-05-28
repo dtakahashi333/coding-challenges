@@ -5,7 +5,7 @@
 
 use std::{cell::RefCell, rc::Rc};
 
-use crate::leet_code::common::tree_node::TreeNode;
+use crate::common::tree_node::TreeNode;
 
 #[derive(Debug)]
 pub struct Solution;
@@ -98,7 +98,7 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::leet_code::common::tree_node::vec_to_bst;
+    use crate::common::tree_node::vec_to_bst;
 
     use super::*;
 

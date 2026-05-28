@@ -3,7 +3,7 @@
 // 108. Convert Sorted Array to Binary Search Tree
 // https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
 
-use crate::leet_code::common::tree_node::TreeNode;
+use crate::common::tree_node::TreeNode;
 
 use std::cell::RefCell;
 use std::rc::Rc;
@@ -39,7 +39,7 @@ impl Solution {
 mod tests {
     use super::*;
 
-    use crate::leet_code::common::tree_node::bst_to_vec;
+    use crate::common::tree_node::bst_to_vec;
 
     #[test]
     fn test1() {

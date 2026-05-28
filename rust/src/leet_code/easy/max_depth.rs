@@ -3,7 +3,7 @@
 // 104. Maximum Depth of Binary Tree
 // https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 
-use crate::leet_code::common::tree_node::TreeNode;
+use crate::common::tree_node::TreeNode;
 
 use std::cell::RefCell;
 use std::rc::Rc;
@@ -46,7 +46,7 @@ impl Solution {
 mod test {
     use super::*;
 
-    use crate::leet_code::common::tree_node::vec_to_bst;
+    use crate::common::tree_node::vec_to_bst;
 
     #[test]
     fn test1() {

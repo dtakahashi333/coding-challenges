@@ -3,7 +3,7 @@
 // 206. Reverse Linked List
 // https://leetcode.com/problems/reverse-linked-list/description/
 
-use crate::leet_code::common::list_node::ListNode;
+use crate::common::list_node::ListNode;
 
 #[derive(Debug)]
 pub struct Solution;
@@ -31,7 +31,7 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::leet_code::common::list_node::{list_to_vec, vec_to_list};
+    use crate::common::list_node::{list_to_vec, vec_to_list};
 
     use super::*;
 
