@@ -18,6 +18,7 @@ pub mod inorder_traversal;
 // pub mod intersect;
 // pub mod add_strings;
 pub mod can_construct;
+pub mod diameter_of_binary_tree;
 pub mod find_the_difference;
 pub mod first_uniq_char;
 pub mod fizz_buzz;

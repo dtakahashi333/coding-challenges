@@ -6,6 +6,7 @@
 use crate::common::tree_node::TreeNode;
 
 use std::cell::RefCell;
+use std::collections::VecDeque;
 use std::rc::Rc;
 
 #[derive(Debug)]
@@ -50,6 +51,34 @@ impl Solution {
         }
         left.is_none() && right.is_none() && left_stack.is_empty() && right_stack.is_empty()
     }
+
+    pub fn is_symmetric2(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
+        let root = match root {
+            Some(r) => r,
+            None => return true,
+        };
+
+        let mut deque = VecDeque::new();
+        deque.push_back((root.borrow().left.clone(), root.borrow().right.clone()));
+
+        while !deque.is_empty() {
+            if let Some((left, right)) = deque.pop_front() {
+                match (left, right) {
+                    (None, None) => {}
+                    (Some(l), Some(r)) => {
+                        if l.borrow().val != r.borrow().val {
+                            return false;
+                        }
+                        deque.push_back((l.borrow().left.clone(), r.borrow().right.clone()));
+                        deque.push_back((l.borrow().right.clone(), r.borrow().left.clone()));
+                    }
+                    _ => return false,
+                }
+            }
+        }
+
+        true
+    }
 }
 
 #[cfg(test)]
@@ -79,6 +108,30 @@ mod tests {
             Some(3),
         ]);
         let result = Solution::is_symmetric(root);
+        assert!(!result);
+    }
+
+    #[test]
+    #[allow(clippy::useless_vec)]
+    fn test3() {
+        let root = vec_to_bst(vec![1, 2, 2, 3, 4, 4, 3].iter().map(|x| Some(*x)).collect());
+        let result = Solution::is_symmetric2(root);
+        assert!(result);
+    }
+
+    #[test]
+    #[allow(clippy::useless_vec)]
+    fn test4() {
+        let root = vec_to_bst(vec![
+            Some(1),
+            Some(2),
+            Some(2),
+            None,
+            Some(3),
+            None,
+            Some(3),
+        ]);
+        let result = Solution::is_symmetric2(root);
         assert!(!result);
     }
 }

@@ -6,6 +6,8 @@
 use crate::common::tree_node::TreeNode;
 
 use std::cell::RefCell;
+use std::cmp::max;
+use std::collections::VecDeque;
 use std::rc::Rc;
 
 #[derive(Debug)]
@@ -13,8 +15,6 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        use std::collections::VecDeque;
-
         if root.is_none() {
             return 0;
         }
@@ -39,6 +39,18 @@ impl Solution {
         }
 
         depth
+    }
+
+    pub fn max_depth2(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+        if let Some(node) = root {
+            let n_ref = node.borrow();
+            1 + max(
+                Self::max_depth(n_ref.left.clone()),
+                Self::max_depth(n_ref.right.clone()),
+            )
+        } else {
+            0
+        }
     }
 }
 
@@ -67,6 +79,28 @@ mod test {
     fn test2() {
         let root = vec_to_bst(vec![Some(1), None, Some(2)]);
         let result = Solution::max_depth(root);
+        assert_eq!(result, 2);
+    }
+
+    #[test]
+    fn test3() {
+        let root = vec_to_bst(vec![
+            Some(3),
+            Some(9),
+            Some(20),
+            None,
+            None,
+            Some(15),
+            Some(7),
+        ]);
+        let result = Solution::max_depth2(root);
+        assert_eq!(result, 3);
+    }
+
+    #[test]
+    fn test4() {
+        let root = vec_to_bst(vec![Some(1), None, Some(2)]);
+        let result = Solution::max_depth2(root);
         assert_eq!(result, 2);
     }
 }
