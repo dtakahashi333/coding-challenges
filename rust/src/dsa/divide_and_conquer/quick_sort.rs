@@ -9,27 +9,27 @@ impl Solution {
         }
 
         let pivot = nums[nums.len() - 1];
-        let mut first = Vec::new();
-        let mut second = Vec::new();
-        let mut last = Vec::new();
+        let mut left = Vec::new();
+        let mut pivots = Vec::new();
+        let mut right = Vec::new();
 
-        for i in 0..nums.len() {
-            if nums[i] == pivot {
-                second.push(nums[i]);
-            } else if nums[i] < pivot {
-                first.push(nums[i]);
+        for num in &nums {
+            if *num == pivot {
+                pivots.push(*num);
+            } else if *num < pivot {
+                left.push(*num);
             } else {
-                last.push(nums[i]);
+                right.push(*num);
             }
         }
 
-        first = Self::quick_sort(first);
-        last = Self::quick_sort(last);
+        left = Self::quick_sort(left);
+        right = Self::quick_sort(right);
 
-        first.append(&mut second);
-        first.append(&mut last);
+        left.append(&mut pivots);
+        left.append(&mut right);
 
-        first
+        left
     }
 
     pub fn quick_sort2(nums: &mut [i32]) {
