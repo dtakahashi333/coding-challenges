@@ -19,18 +19,18 @@ impl Solution {
 
         // Step 1: Try choosing each possible tile as the "Eye" (Pair)
         for key in keys {
-            if let Some(value) = map.get_mut(&key) {
-                if *value >= 2 {
-                    *value -= 2;
+            if let Some(value) = map.get_mut(&key)
+                && *value >= 2
+            {
+                *value -= 2;
 
-                    if Self::is_winning_hand_helper(&mut map) {
-                        return true;
-                    }
+                if Self::is_winning_hand_helper(&mut map) {
+                    return true;
+                }
 
-                    // Backtrack
-                    if let Some(v) = map.get_mut(&key) {
-                        *v += 2;
-                    }
+                // Backtrack
+                if let Some(v) = map.get_mut(&key) {
+                    *v += 2;
                 }
             }
         }
@@ -47,18 +47,18 @@ impl Solution {
         };
 
         // ----- 1. Try forming a Triple (Pong) -----
-        if let Some(v) = map.get_mut(&min) {
-            if *v >= 3 {
-                *v -= 3;
+        if let Some(v) = map.get_mut(&min)
+            && *v >= 3
+        {
+            *v -= 3;
 
-                if Self::is_winning_hand_helper(map) {
-                    return true;
-                }
+            if Self::is_winning_hand_helper(map) {
+                return true;
+            }
 
-                // Backtrack
-                if let Some(v) = map.get_mut(&min) {
-                    *v += 3;
-                }
+            // Backtrack
+            if let Some(v) = map.get_mut(&min) {
+                *v += 3;
             }
         }
 
