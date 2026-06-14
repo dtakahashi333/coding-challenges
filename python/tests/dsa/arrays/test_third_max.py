@@ -19,7 +19,7 @@ class TestThirdMax(TestCase):
         res = s.thirdMax(nums)
         self.assertEqual(res, 2)
 
-    def test_third_max1(self):
+    def test_third_max3(self):
         nums = [2, 2, 3, 1]
         s = Solution()
         res = s.thirdMax(nums)

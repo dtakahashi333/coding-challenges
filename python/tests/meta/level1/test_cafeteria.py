@@ -3,6 +3,7 @@
 from unittest import TestCase
 from meta.level1.cafeteria import getMaxAdditionalDinersCount
 
+
 class TestCafeteria(TestCase):
 
     def test_cafeteria1(self):

@@ -1,7 +1,6 @@
 #! /bin/env python3
 
 from typing import List
-import math
 
 
 def getMaxAdditionalDinersCount(N: int, K: int, M: int, S: List[int]) -> int:
