@@ -15,8 +15,8 @@ class TestFindContentChildren(TestCase):
         self.assertEqual(result, 1)
 
     def test_find_content_children2(self):
-        g = [1,2]
-        s = [1,2,3]
+        g = [1, 2]
+        s = [1, 2, 3]
         sol = Solution()
         result = sol.findContentChildren(g, s)
         self.assertEqual(result, 2)

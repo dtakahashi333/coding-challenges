@@ -40,6 +40,7 @@ pub mod is_same_tree;
 pub mod is_subsequence;
 pub mod is_symmetric;
 pub mod is_ugly;
+pub mod lemonade_change;
 pub mod length_of_last_word;
 pub mod longest_common_prefix;
 pub mod longest_palindrome;
