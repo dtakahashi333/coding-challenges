@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # python/src/dsa/recursion/generate_parehthesis.py
 

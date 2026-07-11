@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # python/tests/dsa/divide_and_conquer/test_count_good_numbers.py
 

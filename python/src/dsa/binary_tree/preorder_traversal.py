@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # 144. Binary Tree Preorder Traversal
 # https://leetcode.com/problems/binary-tree-preorder-traversal/description/

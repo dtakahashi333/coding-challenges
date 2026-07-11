@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # python/tests/dsa/sorting/test_merge_sort.py
 

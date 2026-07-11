@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # python/tests/dsa/greedy_algorithms/test_lemonade_change.py
 

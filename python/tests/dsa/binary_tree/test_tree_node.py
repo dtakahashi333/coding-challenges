@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 from unittest import TestCase
 from dsa.binary_tree.tree_node import build_binary_tree

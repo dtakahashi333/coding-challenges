@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # python/tests/dsa/recursive/test_generate_parenthesis.py
 

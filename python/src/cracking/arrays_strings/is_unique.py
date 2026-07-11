@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # coding-challenges/python/src/cracking/arrays_strings/is_unique.py
 

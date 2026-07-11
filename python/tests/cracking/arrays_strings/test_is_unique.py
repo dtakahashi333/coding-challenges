@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 from unittest import TestCase
 from cracking.arrays_strings.is_unique import Solution

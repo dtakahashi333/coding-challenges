@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # python/src/dsa/binary_tree/diameter_of_binary_tree.py
 

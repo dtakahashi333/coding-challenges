@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # python/src/dsa/greedy_algorithms/lemonade_change.py
 

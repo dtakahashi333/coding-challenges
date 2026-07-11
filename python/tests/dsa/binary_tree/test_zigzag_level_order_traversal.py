@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # tests/dsa/binary_tree/test_zigzag_level_order_traversal.py
 

@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 # python/src/dsa/divide_and_conquer/is_winning_hand.py
 
