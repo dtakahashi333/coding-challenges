@@ -5,8 +5,6 @@
 # 155. Min Stack
 # https://leetcode.com/problems/min-stack/description/
 
-import sys
-
 
 class MinStack:
     def __init__(self):

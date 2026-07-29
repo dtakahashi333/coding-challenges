@@ -3,7 +3,7 @@
 # python/src/dsa/strings/is_valid.py
 
 # 20. Valid Parentheses
-# https://leetcode.com/problems/valid-parentheses/
+# https://leetcode.com/problems/valid-parentheses/description/
 
 
 class Solution:
