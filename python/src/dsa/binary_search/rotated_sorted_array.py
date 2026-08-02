@@ -32,7 +32,7 @@ class Solution:
 
 
 def main():
-    nums = [3,1]
+    nums = [3, 1]
     target = 1
     s = Solution()
     print(s.search(nums, target))

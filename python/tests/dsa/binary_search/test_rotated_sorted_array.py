@@ -26,7 +26,7 @@ class TestRotatedSortedArray(TestCase):
         self.assertEqual(s.search(nums, target), -1)
 
     def test_rotated_sorted_array4(self):
-        nums = nums = [3,1]
+        nums = nums = [3, 1]
         target = 1
         s = Solution()
         self.assertEqual(s.search(nums, target), 1)
