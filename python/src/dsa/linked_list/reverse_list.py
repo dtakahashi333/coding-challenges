@@ -18,7 +18,7 @@ class Solution:
             node = node.next
 
         return reverse_list
-    
+
     def reverseList2(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if head is None:
             return None
