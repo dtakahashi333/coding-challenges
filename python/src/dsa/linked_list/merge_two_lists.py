@@ -18,7 +18,7 @@ class Solution:
     ) -> Optional[ListNode]:
         head = ListNode()
         current = head
-        while list1 is not None and list2 is not None:
+        while list1 and list2:
             if list1.val < list2.val:
                 current.next = ListNode(list1.val)
                 list1 = list1.next
@@ -28,9 +28,9 @@ class Solution:
 
             current = current.next
 
-        if list1 is not None:
+        if list1:
             current.next = list1
-        elif list2 is not None:
+        elif list2:
             current.next = list2
 
         return head.next
@@ -39,7 +39,7 @@ class Solution:
         self, list1: Optional[ListNode], list2: Optional[ListNode]
     ) -> Optional[ListNode]:
         head = list1
-        while list1 is not None and list2 is not None:
+        while list1 and list2:
             if list1.val < list2.val:
                 list1 = list1.next
             else:
@@ -54,12 +54,12 @@ class Solution:
                 list1 = list2
                 list2 = list2_next
 
-        if head is None:
+        if not head:
             return list2
 
-        if list2 is not None:
+        if list2:
             previous, current = head, head
-            while current is not None:
+            while current:
                 previous = current
                 current = current.next
 
@@ -72,7 +72,7 @@ class Solution:
     ) -> Optional[ListNode]:
         head = ListNode()
         current = head
-        while list1 is not None and list2 is not None:
+        while list1 and list2:
             if list1.val < list2.val:
                 current.next = list1
                 list1 = list1.next
@@ -82,9 +82,9 @@ class Solution:
 
             current = current.next
 
-        if list1 is not None:
+        if list1:
             current.next = list1
-        elif list2 is not None:
+        elif list2:
             current.next = list2
 
         return head.next

@@ -35,7 +35,7 @@ def linked_list_to_list(head: ListNode) -> List[int]:
 
 def list_to_cyclic_linked_list(lst: List[int], pos: int) -> Optional[ListNode]:
     head = list_to_linked_list(lst)
-    if head is None or pos == -1:
+    if not head or pos == -1:
         return head
     node, connection = head, None
     index = 0
