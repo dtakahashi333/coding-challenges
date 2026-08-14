@@ -5,7 +5,7 @@
 
 from typing import Optional
 
-from dsa.linked_list.linked_list import ListNode, linked_list_to_list
+from dsa.linked_list.linked_list import ListNode
 
 
 class Solution:
