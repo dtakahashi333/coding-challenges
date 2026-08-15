@@ -20,7 +20,6 @@ class Solution:
         for _ in range(count - n):
             previous, current = current, current.next
 
-        print(current.val)
         if previous:
             previous.next = current.next
             current = None
