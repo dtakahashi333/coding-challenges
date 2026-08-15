@@ -1,6 +1,9 @@
 # python/src/dsa/linked_list/lru_cache.py
 
-from typing import List, Optional
+# 146. LRU Cache
+# https://leetcode.com/problems/lru-cache/description/
+
+from typing import Optional
 
 
 # Definition for doubly-linked list.
@@ -28,35 +31,44 @@ class LRUCache:
 
     def get(self, key: int) -> int:
         if key in self.hash_map:
-            value, ref = self.hash_map[key]
-            ref.prev.next = ref.next
-            ref.next.prev = ref.prev
-            self.mru_sentinel.prev.next = ref
-            ref.prev = self.mru_sentinel.prev
-            self.mru_sentinel.prev = ref
-            ref.next = self.mru_sentinel
+            node = self.hash_map[key]
+            value = node.val
+            if node != self.mru_sentinel.prev:
+                self.remove(node)
+                self.insert_at_mru(node)
             return value
         else:
             return -1
 
     def put(self, key: int, value: int) -> None:
         if key in self.hash_map:
-            _, ref = self.hash_map[key]
-            ref.prev.next = ref.next
-            ref.next.prev = ref.prev
+            node = self.hash_map[key]
+            node.val = value
+            if node != self.mru_sentinel.prev:
+                self.remove(node)
+                self.insert_at_mru(node)
         else:
-            ref = ListNode(key=key, val=value)
-        self.hash_map[key] = (value, ref)
-        self.mru_sentinel.prev.next = ref
-        ref.prev = self.mru_sentinel.prev
-        self.mru_sentinel.prev = ref
-        ref.next = self.mru_sentinel
+            node = ListNode(key=key, val=value)
+            self.insert_at_mru(node)
+        self.hash_map[key] = node
         if len(self.hash_map) > self.capacity:
-            remove = self.lru_sentinel.next
-            self.lru_sentinel.next = remove.next
-            remove.next.prev = self.lru_sentinel
-            del self.hash_map[remove.key]
-            remove = None
+            self.remove_at_lru(self.lru_sentinel.next)
+
+    def remove(self, node: ListNode):
+        node.prev.next = node.next
+        node.next.prev = node.prev
+
+    def insert_at_mru(self, node: ListNode):
+        self.mru_sentinel.prev.next = node
+        node.prev = self.mru_sentinel.prev
+        self.mru_sentinel.prev = node
+        node.next = self.mru_sentinel
+
+    def remove_at_lru(self, node: ListNode):
+        self.lru_sentinel.next = node.next
+        node.next.prev = self.lru_sentinel
+        del self.hash_map[node.key]
+        node = None
 
 
 def main():
