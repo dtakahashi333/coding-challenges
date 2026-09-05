@@ -8,8 +8,8 @@ from dsa.binary_tree.tree_node import build_binary_tree
 
 class TestIsSameTree(TestCase):
     def setUp(self):
+        super().setUp()
         self.solution = Solution()
-        return super().setUp()
 
     def test_is_same_tree1(self):
         p = build_binary_tree([1, 2, 3])

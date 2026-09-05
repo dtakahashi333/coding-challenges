@@ -7,8 +7,8 @@ from dsa.linked_list.merge_two_lists import Solution
 
 class TestMergeTwoLists(TestCase):
     def setUp(self):
+        super().setUp()
         self.solution = Solution()
-        return super().setUp()
 
     def test_merge_two_lists1(self):
         list1 = list_to_linked_list([1, 2, 4])

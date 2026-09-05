@@ -7,8 +7,8 @@ from dsa.linked_list.remove_nth_from_end import Solution
 
 class TestRemoveNthFromEnd(TestCase):
     def setUp(self):
+        super().setUp()
         self.solution = Solution()
-        return super().setUp()
 
     def test_remove_nth_from_end1(self):
         head = list_to_linked_list([1, 2, 3, 4, 5])

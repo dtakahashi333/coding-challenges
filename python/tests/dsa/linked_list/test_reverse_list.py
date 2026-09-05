@@ -8,8 +8,8 @@ from dsa.linked_list.reverse_list import Solution
 
 class TestReverseList(TestCase):
     def setUp(self):
+        super().setUp()
         self.solution = Solution()
-        return super().setUp()
 
     def test_reverse_list1(self):
         head = list_to_linked_list([1, 2, 3, 4, 5])

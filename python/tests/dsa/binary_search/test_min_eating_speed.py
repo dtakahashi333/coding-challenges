@@ -8,8 +8,8 @@ from dsa.binary_search.min_eating_speed import Solution
 
 class TestMinEatingSpeed(TestCase):
     def setUp(self):
+        super().setUp()
         self.solution = Solution()
-        return super().setUp()
 
     def test_min_eating_speed1(self):
         piles = [3, 6, 7, 11]

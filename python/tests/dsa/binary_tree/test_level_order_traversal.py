@@ -10,24 +10,24 @@ from dsa.binary_tree.tree_node import build_binary_tree
 
 
 class TestLevelOrderTraversal(TestCase):
+    def setUp(self):
+        super().setUp()
+        self.solution = Solution()
 
     def test_level_order_traversal1(self):
         root = build_binary_tree([3, 9, 20, None, None, 15, 7])
-        s = Solution()
-        res = s.levelOrder(root)
+        res = self.solution.levelOrder(root)
         # Assertion
         self.assertListEqual(res, [[3], [9, 20], [15, 7]])
 
     def test_level_order_traversal2(self):
         root = build_binary_tree([1])
-        s = Solution()
-        res = s.levelOrder(root)
+        res = self.solution.levelOrder(root)
         # Assertion
         self.assertListEqual(res, [[1]])
 
     def test_level_order_traversal3(self):
         root = build_binary_tree([])
-        s = Solution()
-        res = s.levelOrder(root)
+        res = self.solution.levelOrder(root)
         # Assertion
         self.assertListEqual(res, [])

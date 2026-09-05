@@ -9,8 +9,8 @@ from dsa.binary_tree.maximum_depth import Solution
 
 class TestMaximumDepth(TestCase):
     def setUp(self):
+        super().setUp()
         self.solution = Solution()
-        return super().setUp()
 
     def test_max_depth1(self):
         root = build_binary_tree([])

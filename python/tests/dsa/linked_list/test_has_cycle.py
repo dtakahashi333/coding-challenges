@@ -7,8 +7,8 @@ from dsa.linked_list.linked_list import list_to_cyclic_linked_list
 
 class TestHasCycle(TestCase):
     def setUp(self):
+        super().setUp()
         self.solution = Solution()
-        return super().setUp()
 
     def test_has_cycle1(self):
         head = list_to_cyclic_linked_list([3, 2, 0, -4], 1)

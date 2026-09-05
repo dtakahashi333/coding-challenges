@@ -7,8 +7,8 @@ from dsa.linked_list.reorder_list import Solution
 
 class TestReorderList(TestCase):
     def setUp(self):
+        super().setUp()
         self.solution = Solution()
-        return super().setUp()
 
     def test_reorder_list1(self):
         head = list_to_linked_list([1, 2, 3, 4])

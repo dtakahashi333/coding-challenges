@@ -9,9 +9,9 @@ from dsa.binary_tree.tree_node import build_binary_tree
 
 class TestInvertTree(TestCase):
     def setUp(self):
+        super().setUp()
         self.solution1 = S1()
         self.solution2 = S2()
-        return super().setUp()
 
     def test_invert_tree1(self):
         root = build_binary_tree([4, 2, 7, 1, 3, 6, 9])

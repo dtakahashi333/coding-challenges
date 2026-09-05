@@ -5,9 +5,6 @@ from dsa.linked_list.lru_cache import LRUCache
 
 
 class TestLRUCache(TestCase):
-    def setUp(self):
-        return super().setUp()
-
     def test_lru_cache1(self):
         """ "
         ["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]
