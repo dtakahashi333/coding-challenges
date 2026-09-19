@@ -302,7 +302,7 @@ For small LeetCode-style projects:
 
 ```cpp
 #include <cassert>
-#include "leet_code/easy/xxx.hpp"
+#include "leetcode/easy/xxx.hpp"
 
 int main() {
     assert(solution(42) == 42);

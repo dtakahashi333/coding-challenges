@@ -4,21 +4,29 @@ gtest_dep = dependency(
     fallback : ['gtest', 'gtest_main_dep']
 )
 
+# the below is the same as without dependencies:
+# executable(
+#   'test_has_cycle',
+#   'leetcode/easy/test_has_cycle.cpp',
+#   link_with: leetcode_easy_lib,
+#   include_directories: inc,
+#   dependencies: gtest_dep,
+# )
 test_has_cycle_exe = executable(
   'test_has_cycle',
-  ['leet_code/easy/test_has_cycle.cpp',],
+  ['leetcode/easy/test_has_cycle.cpp',],
   dependencies : [
     gtest_dep,
-    leet_code_easy_dep,
+    leetcode_easy_dep,
   ],
 )
 
 test_get_intersection_node_exe = executable(
   'test_get_intersection_node',
-  ['leet_code/easy/test_get_intersection_node.cpp',],
+  ['leetcode/easy/test_get_intersection_node.cpp',],
   dependencies : [
     gtest_dep,
-    leet_code_easy_dep,
+    leetcode_easy_dep,
   ],
 )
 

@@ -1,16 +1,16 @@
-inc = include_directories('.')
+inc = include_directories('../include')
 
-leet_code_easy_lib = library(
-    'leet_code',
+leetcode_easy_lib = library(
+    'leetcode_easy',
     sources : files(
-        'leet_code/common/list_node.cpp',
-        'leet_code/easy/has_cycle.cpp',
-        'leet_code/easy/get_intersection_node.cpp',
+        'leetcode/common/list_node.cpp',
+        'leetcode/easy/has_cycle.cpp',
+        'leetcode/easy/get_intersection_node.cpp',
     ),
     include_directories : inc,
 )
 
-leet_code_easy_dep = declare_dependency(
+leetcode_easy_dep = declare_dependency(
     include_directories : inc,
-    link_with : leet_code_easy_lib,
+    link_with : leetcode_easy_lib,
 )

@@ -1,11 +1,11 @@
-// cpp/src/leet_code/common/has_cycle.hpp
+// cpp/include/leetcode/common/has_cycle.hpp
 
 // 141. Linked List Cycle
 // https://leetcode.com/problems/linked-list-cycle/description/
 
 #pragma once
 
-#include "../common/list_node.hpp"
+#include <leetcode/common/list_node.hpp>
 
 class Solution
 {

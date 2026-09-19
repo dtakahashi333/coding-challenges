@@ -1,4 +1,4 @@
-// cpp/src/leet_code/common/list_node.hpp
+// cpp/include/leetcode/common/list_node.hpp
 
 #pragma once
 

@@ -1,6 +1,6 @@
-// cpp/src/leet_code/easy/get_intersection_node.cpp
+// cpp/src/leetcode/easy/get_intersection_node.cpp
 
-#include "get_intersection_node.hpp"
+#include <leetcode/easy/get_intersection_node.hpp>
 #include <iostream>
 #include <vector>
 

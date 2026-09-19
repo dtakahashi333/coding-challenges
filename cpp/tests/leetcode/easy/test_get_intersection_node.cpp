@@ -1,8 +1,10 @@
+// cpp/tests/leetcode/easy/test_get_intersection_node.cpp
+
 #include <gtest/gtest.h>
 #include <cassert>
 #include <vector>
-#include "leet_code/common/list_node.hpp"
-#include "leet_code/easy/get_intersection_node.hpp"
+#include "leetcode/common/list_node.hpp"
+#include "leetcode/easy/get_intersection_node.hpp"
 
 using namespace std;
 

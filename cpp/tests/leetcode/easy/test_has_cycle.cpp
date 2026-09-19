@@ -1,8 +1,10 @@
+// cpp/tests/leetcode/easy/test_has_cycle.cpp
+
 #include <gtest/gtest.h>
 #include <cassert>
 #include <vector>
-#include "leet_code/common/list_node.hpp"
-#include "leet_code/easy/has_cycle.hpp"
+#include "leetcode/common/list_node.hpp"
+#include "leetcode/easy/has_cycle.hpp"
 
 using namespace std;
 

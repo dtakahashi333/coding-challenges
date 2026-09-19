@@ -1,6 +1,6 @@
-// cpp/src/leet_code/common/has_cycle.cpp
+// cpp/src/leetcode/common/has_cycle.cpp
 
-#include "has_cycle.hpp"
+#include <leetcode/easy/has_cycle.hpp>
 #include <iostream>
 #include <unordered_set>
 

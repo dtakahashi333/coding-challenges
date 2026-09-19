@@ -1,6 +1,6 @@
-// cpp/src/leet_code/common/list_node.cpp
+// cpp/src/leetcode/common/list_node.cpp
 
-#include "list_node.hpp"
+#include <leetcode/common/list_node.hpp>
 
 ListNode *vec_to_cyclic_list(const vector<int> &v, int pos)
 {
