@@ -7,9 +7,8 @@
 
 #include "../common/list_node.hpp"
 
-class Solution
-{
-public:
-    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB);
-    ListNode *getIntersectionNode2(ListNode *headA, ListNode *headB);
+class Solution {
+ public:
+  ListNode* getIntersectionNode(ListNode* headA, ListNode* headB);
+  ListNode* getIntersectionNode2(ListNode* headA, ListNode* headB);
 };

@@ -3,9 +3,10 @@ Checks: >
   performance-*,
   portability-*,
   readability-*,
+  -portability-avoid-pragma-once,
   -readability-convert-member-functions-to-static,
   -readability-identifier-length,
-  -portability-avoid-pragma-once
+  -readability-magic-numbers
 
 WarningsAsErrors: ''
 HeaderFilterRegex: '.*'

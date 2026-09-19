@@ -25,11 +25,25 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt update
-        sudo apt install -y meson ninja-build g++
+        sudo apt install -y meson ninja-build g++ clang-format clang-tidy
+
+    - name: Check clang-format
+      working-directory: ./cpp
+      run: |
+        find include src tests \
+          -type f \( -name '*.cpp' -o -name '*.hpp' \) \
+          -exec clang-format --dry-run --Werror {} +
 
     - name: Configure build
       working-directory: ./cpp
       run: meson setup build
+
+    - name: Run clang-tidy
+      working-directory: ./cpp
+      run: |
+        find include src tests \
+          -type f \( -name '*.cpp' -o -name '*.hpp' \) \
+          -exec clang-tidy -p build {} +
 
     - name: Build
       working-directory: ./cpp

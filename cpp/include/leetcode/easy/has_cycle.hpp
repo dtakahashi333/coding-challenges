@@ -7,9 +7,8 @@
 
 #include <leetcode/common/list_node.hpp>
 
-class Solution
-{
-public:
-    bool hasCycle(ListNode *head);
-    bool hasCycle2(ListNode *head);
+class Solution {
+ public:
+  bool hasCycle(ListNode* head);
+  bool hasCycle2(ListNode* head);
 };
