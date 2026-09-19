@@ -8,7 +8,8 @@ using namespace std;
 
 ListNode *Solution::getIntersectionNode(ListNode *headA, ListNode *headB)
 {
-    vector<ListNode *> stackA, stackB;
+    vector<ListNode *> stackA;
+    vector<ListNode *> stackB;
     auto *nodeA = headA;
     auto *nodeB = headB;
     while (nodeA != NULL)
@@ -25,7 +26,9 @@ ListNode *Solution::getIntersectionNode(ListNode *headA, ListNode *headB)
     while (!stackA.empty() && !stackB.empty())
     {
         if (stackA.back() != stackB.back())
+        {
             break;
+        }
         // preserve a previous node.
         intersection = stackA.back();
         stackA.pop_back();
@@ -42,8 +45,8 @@ ListNode *Solution::getIntersectionNode2(ListNode *headA, ListNode *headB)
 
     while (pA != pB)
     {
-        pA = pA ? pA->next : headB;
-        pB = pB ? pB->next : headA;
+        pA = pA != nullptr ? pA->next : headB;
+        pB = pB != nullptr ? pB->next : headA;
     }
     return pA;
 }

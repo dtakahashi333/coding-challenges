@@ -7,7 +7,7 @@ vector<int> Solution::twoSum(vector<int> &nums, int target)
 {
     map<int, int> hash_map;
 
-    for (int i = 0; i < nums.size(); i++)
+    for (int i = 0; i < static_cast<int>(nums.size()); i++)
     {
         if (hash_map.contains(nums[i]))
         {

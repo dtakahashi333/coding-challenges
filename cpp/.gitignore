@@ -6,3 +6,5 @@ subprojects/*
 
 # Do NOT ignore custom patches or build overlays you've created
 !subprojects/packagefiles/
+
+build/

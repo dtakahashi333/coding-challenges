@@ -5,9 +5,11 @@
 ListNode *vec_to_cyclic_list(const vector<int> &v, int pos)
 {
     if (v.empty())
+    {
         return NULL;
-    auto head = new ListNode(v[0]);
-    auto cur = head;
+    }
+    auto *head = new ListNode(v[0]);
+    auto *cur = head;
     for (auto it = v.begin() + 1; it != v.end(); it++)
     {
         cur->next = new ListNode(*it);
@@ -15,9 +17,11 @@ ListNode *vec_to_cyclic_list(const vector<int> &v, int pos)
     }
     if (pos >= 0)
     {
-        auto node = head;
+        auto *node = head;
         for (int i = 0; i < pos; i++)
+        {
             node = node->next;
+        }
         cur->next = node;
     }
     return head;
@@ -26,7 +30,9 @@ ListNode *vec_to_cyclic_list(const vector<int> &v, int pos)
 ListNode *vec_to_list(const std::vector<int> &v)
 {
     if (v.empty())
+    {
         return NULL;
+    }
 
     ListNode *head = new ListNode(v[0]);
     ListNode *cur = head;
@@ -43,15 +49,21 @@ void attach_at(ListNode *headB, ListNode *headA, int pos)
 {
     ListNode *curA = headA;
     for (int i = 0; i < pos; i++)
+    {
         curA = curA->next;
+    }
 
-    if (!headB)
+    if (headB == nullptr)
+    {
         headB = curA;
+    }
     else
     {
         ListNode *curB = headB;
-        while (curB->next)
+        while (curB->next != nullptr)
+        {
             curB = curB->next;
+        }
         curB->next = curA;
     }
 }

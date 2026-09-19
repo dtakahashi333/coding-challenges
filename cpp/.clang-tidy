@@ -1,0 +1,12 @@
+Checks: >
+  bugprone-*,
+  performance-*,
+  portability-*,
+  readability-*,
+  -readability-convert-member-functions-to-static,
+  -readability-identifier-length,
+  -portability-avoid-pragma-once
+
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+FormatStyle: file
