@@ -24,8 +24,13 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt update
-        sudo apt install -y meson ninja-build g++ clang-format clang-tidy
+        # sudo apt update
+        # sudo apt install -y meson ninja-build g++ clang-format clang-tidy
+        pipx install clang-format==23.1.1
+        # pipx automatically places the 'clang-format' binary into the runner's PATH        
+
+    - name: Check clang-format version
+      run: clang-format --version
 
     - name: Check clang-format
       working-directory: ./cpp
