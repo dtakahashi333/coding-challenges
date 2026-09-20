@@ -27,11 +27,13 @@ jobs:
         sudo apt update
         sudo apt install -y meson ninja-build g++
         pipx install clang-format==23.1.1
-        pipx install clang-tidy==23.1.1
+        pipx install clang-tidy==22.1.8
         # pipx automatically places the 'clang-format' and 'clang-tidy' binaries into the runner's PATH        
 
-    - name: Check clang-format version
-      run: clang-format --version
+    - name: Verify tool versions
+      run: |
+        clang-format --version
+        clang-tidy --version
 
     - name: Check clang-format
       working-directory: ./cpp
